@@ -12,7 +12,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Migrating to SWE-Bench Pro (uncontaminated). Current frontier ceiling ~81%.",
-    "description": "Real GitHub issues solved by AI. Verified subset with less contamination risk."
+    "description": "Real GitHub issues solved by AI. Verified subset with less contamination risk.",
+    "creator": "Scale AI + Princeton",
+    "affiliation_risk": "low",
+    "affiliation_note": "Independent verification."
   },
   {
     "id": "swe_pro",
@@ -27,7 +30,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Replacement for SWE-V. Better separation. Current frontier ceiling ~46%.",
-    "description": "Harder coding tasks from real repos. Professional-level, less contamination."
+    "description": "Harder coding tasks from real repos. Professional-level, less contamination.",
+    "creator": "Scale AI",
+    "affiliation_risk": "low",
+    "affiliation_note": "Independent testing."
   },
   {
     "id": "gpqa",
@@ -42,7 +48,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Frontier ceiling ~94%. Still meaningful separation.",
-    "description": "Graduate-level science questions. PhD-verified, hard to guess."
+    "description": "Graduate-level science questions. PhD-verified, hard to guess.",
+    "creator": "NYU/Cohere",
+    "affiliation_risk": "medium",
+    "affiliation_note": "Cohere co-authored."
   },
   {
     "id": "hle",
@@ -72,7 +81,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Pure LLMs scored 0% on ARC-AGI-1. ARC-AGI-2 harder. Frontier ceiling ~77%.",
-    "description": "Abstract reasoning puzzles. Tests generalization, not memorization."
+    "description": "Abstract reasoning puzzles. Tests generalization, not memorization.",
+    "creator": "ARC Prize Foundation",
+    "affiliation_risk": "low",
+    "affiliation_note": "Independent non-profit."
   },
   {
     "id": "tau2",
@@ -87,7 +99,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Slight saturation at frontier (99.3%). Still meaningful for budget model comparison.",
-    "description": "Multi-turn tool use. Tests agent reliability over many steps."
+    "description": "Multi-turn tool use. Tests agent reliability over many steps.",
+    "creator": "Sierra Research",
+    "affiliation_risk": "low",
+    "affiliation_note": "No model affiliation."
   },
   {
     "id": "terminal_bench_2",
@@ -147,7 +162,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "V4 released 2026. Migrated from V3. Slight saturation at frontier.",
-    "description": "Berkeley Function Calling Leaderboard. Tests tool/function calling accuracy."
+    "description": "Berkeley Function Calling Leaderboard. Tests tool/function calling accuracy.",
+    "creator": "UC Berkeley",
+    "affiliation_risk": "low",
+    "affiliation_note": "Academic."
   },
   {
     "id": "lmarena",
@@ -162,7 +180,10 @@
     "max_score": null,
     "lifecycle": "active",
     "notes": "ELO score. Volatile \u2014 sensitive to style and verbosity, not just quality.",
-    "description": "Human preference ranking. Crowdsourced blind model comparisons."
+    "description": "Human preference ranking. Crowdsourced blind model comparisons.",
+    "creator": "LMSYS/UC Berkeley",
+    "affiliation_risk": "low",
+    "affiliation_note": "Crowdsourced blind voting."
   },
   {
     "id": "simpleqa",
@@ -177,7 +198,10 @@
     "max_score": 100,
     "lifecycle": "planned",
     "notes": "Benchmark tracked, scores not yet collected.",
-    "description": "Hallucination resistance. Tests factual accuracy on simple questions."
+    "description": "Hallucination resistance. Tests factual accuracy on simple questions.",
+    "creator": "OpenAI",
+    "affiliation_risk": "high",
+    "affiliation_note": "Created by OpenAI. May favor GPT architecture."
   },
   {
     "id": "mmmu",
@@ -237,7 +261,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "MiniMax M2.5 leads at 76.3%.",
-    "description": "Web browsing comprehension by OpenAI."
+    "description": "Web browsing comprehension by OpenAI.",
+    "creator": "OpenAI",
+    "affiliation_risk": "high",
+    "affiliation_note": "OpenAI internal benchmark."
   },
   {
     "id": "ifbench",
@@ -297,7 +324,10 @@
     "max_score": 100,
     "lifecycle": "dead",
     "notes": "All frontier models 90%+. No separation. Replaced by SWE-Bench.",
-    "description": "Python code generation. Saturated \u2014 most models score 95%+."
+    "description": "Python code generation. Saturated \u2014 most models score 95%+.",
+    "creator": "OpenAI",
+    "affiliation_risk": "high",
+    "affiliation_note": "OpenAI-created. Saturated and contaminated."
   },
   {
     "id": "mmlu",
@@ -522,7 +552,10 @@
     "max_score": 1.0,
     "lifecycle": "active",
     "notes": "Feb 2026 benchmark. Sonnet 4.6 leads at 0.835.",
-    "description": "Web scraper code generation quality (ROUGE-1 score)."
+    "description": "Web scraper code generation quality (ROUGE-1 score).",
+    "creator": "Zyte",
+    "affiliation_risk": "medium",
+    "affiliation_note": "Zyte sells scraping tools."
   },
   {
     "id": "vending_b2",
@@ -597,7 +630,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Real-world browser automation. Claude Sonnet 4.6 leads.",
-    "description": "Automated browser interaction and web task completion."
+    "description": "Automated browser interaction and web task completion.",
+    "creator": "Browser Use",
+    "affiliation_risk": "medium",
+    "affiliation_note": "Browser Use startup benchmark."
   },
   {
     "id": "jsdeobs",
@@ -627,7 +663,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Assembly deobfuscation. Claude Sonnet 4.6 leads.",
-    "description": "Assembly deobfuscation. Binary reverse engineering tasks."
+    "description": "Assembly deobfuscation. Binary reverse engineering tasks.",
+    "creator": "Promon",
+    "affiliation_risk": "medium",
+    "affiliation_note": "Promon sells app protection."
   },
   {
     "id": "analytics_accuracy",
@@ -657,7 +696,10 @@
     "max_score": null,
     "lifecycle": "active",
     "notes": "Lower = better. Best: Soniox 3.2%, Deepgram Nova-3 3.5%, Whisper large-v3 4.2%.",
-    "description": "Word Error Rate on clean speech. Transcription accuracy."
+    "description": "Word Error Rate on clean speech. Transcription accuracy.",
+    "creator": "OpenAI",
+    "affiliation_risk": "medium",
+    "affiliation_note": "Test sets from Whisper paper."
   },
   {
     "id": "wer_noisy",
