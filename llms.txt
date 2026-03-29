@@ -35,7 +35,7 @@ Contains complete routing table + all 119 models in markdown table format.
 
 ## Key facts
 
-- 119 models, 48 benchmarks, 26 embeddings, 97 capability profiles
+- 119 models, 55 benchmarks, 26 embeddings, 97 capability profiles
 - Auto-updated DAILY (prices + capabilities from OpenRouter API)
 - Every benchmark score has a measured date and source URL
 - No self-reported scores — 16 independent sources only

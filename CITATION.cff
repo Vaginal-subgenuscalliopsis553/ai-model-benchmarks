@@ -14,7 +14,7 @@ keywords:
   - pricing
   - task-routing
 abstract: >-
-  Community-driven dataset of 119 AI models compared across 48 benchmarks
+  Community-driven dataset of 119 AI models compared across 55 benchmarks
   with per-score freshness dates, auto-updated pricing, and task routing
   recommendations. All scores sourced from independent third-party
   leaderboards. Updated weekly.

@@ -5,7 +5,7 @@
 [![Daily Prices](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/daily-prices.yml/badge.svg)](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/daily-prices.yml)
 [![Validation](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/validate.yml/badge.svg)](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/validate.yml)
 [![Models](https://img.shields.io/badge/models-119-green)](data/models.json)
-[![Benchmarks](https://img.shields.io/badge/benchmarks-48-blue)](data/benchmarks.json)
+[![Benchmarks](https://img.shields.io/badge/benchmarks-55-blue)](data/benchmarks.json)
 [![Embeddings](https://img.shields.io/badge/embeddings-26-purple)](data/embeddings.json)
 [![License](https://img.shields.io/badge/license-MIT-orange)](LICENSE)
 
