@@ -406,7 +406,7 @@ def gen_live_benchmarks(benchmarks: list) -> str:
     lines = []
     for b in benchmarks:
         lifecycle = b.get("lifecycle", "")
-        if lifecycle not in ("active", "dead"):
+        if lifecycle not in ("active", "saturated", "dead"):
             continue
         cat = b.get("category", "general")
         cat_label = cat_mapping.get(cat, cat.upper())

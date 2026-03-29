@@ -1432,6 +1432,19 @@
         </div>
         <div class="bench-grid" id="liveBenchGrid"></div>
       </div>
+      <div style="margin-bottom: 32px">
+        <div
+          style="
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--amber);
+            margin-bottom: 12px;
+          "
+        >
+          ⚠ Saturated (all frontier models 90%+ — low differentiation)
+        </div>
+        <div class="bench-grid" id="saturatedBenchGrid"></div>
+      </div>
       <div>
         <div
           style="
@@ -1612,7 +1625,7 @@
           letter: "B",
           title: "Reasoning & Knowledge",
           rows: [
-            {cat: "Graduate science", benchKey: "gpqa", bench: "GPQA", q1: "Gemini 3.1 Pro (94.3%)", q2: "GPT-5.2 (92.4%)", b1: "Qwen3.5-397B (88.4%, $0.39)", b2: "Kimi K2.5 (87.6%, $0.45)", free: "—"},
+            {cat: "Graduate science", benchKey: "gpqa", bench: "GPQA", q1: "Gemini 3.1 Pro (94.1%)", q2: "GPT-5.2 (92.4%)", b1: "Qwen3.5-397B (88.4%, $0.39)", b2: "Kimi K2.5 (87.6%, $0.45)", free: "—"},
             {cat: "Hardest reasoning", benchKey: "hle", bench: "HLE", q1: "GPT-5.4 (41.6%)", q2: "Gemini 3.1 Pro (37.2%)", b1: "MiniMax M2.5 (32.0%, $0.2)", b2: "Kimi K2.5 (31.5%, $0.45)", free: "—"},
             {cat: "Abstract reasoning", benchKey: "arc_agi_2", bench: "ARC-AGI-2", q1: "Gemini 3.1 Pro (77.1%)", q2: "GPT-5.4 (73.3%)", b1: "—", b2: "—", free: "—"},
             {cat: "Math competition", benchKey: "aime_2025", bench: "AIME 2025", q1: "GPT-5.4 (100.0%)", q2: "Gemini 3.1 Pro (92.0%)", b1: "GLM-5 (84.0%, $1.0)", b2: "Kimi K2.5 ($0.45)", free: "—"},
@@ -1987,8 +2000,16 @@
         {name: "IFBench", cat: "INSTRUCTION", desc: "Instruction following. Tests compliance with complex format constraints.", saturation: false, url: "https://arxiv.org/abs/2502.09980", lifecycle: "active"},
         {name: "GRIND", cat: "REASONING", desc: "Adaptive reasoning with adjustable difficulty.", saturation: false, url: "https://arxiv.org/abs/2501.06751", lifecycle: "active"},
         {name: "GAIA", cat: "AGENTIC", desc: "General AI Assistant benchmark. Real-world multi-step tasks.", saturation: "slight", url: "https://huggingface.co/gaia-benchmark", lifecycle: "active"},
+        {name: "HumanEval", cat: "CODING", desc: "Python code generation. Saturated — most models score 95%+.", saturation: false, url: "https://github.com/openai/human-eval", lifecycle: "saturated"},
+        {name: "MMLU", cat: "GENERAL", desc: "Multi-task knowledge. Saturated and contaminated.", saturation: false, url: "https://arxiv.org/abs/2009.03300", lifecycle: "saturated"},
         {name: "MMLU-Pro", cat: "GENERAL", desc: "Professional-level multi-task knowledge. Harder than original MMLU.", saturation: false, url: "https://arxiv.org/abs/2406.01574", lifecycle: "active"},
+        {name: "GSM8K", cat: "MATH", desc: "Grade school math. Saturated — frontier models at 95%+.", saturation: false, url: "https://arxiv.org/abs/2110.14168", lifecycle: "saturated"},
         {name: "AIME 2025", cat: "MATH", desc: "Math competition problems. American Invitational Mathematics Exam.", saturation: false, url: "https://artofproblemsolving.com/wiki/index.php/AIME", lifecycle: "active"},
+        {name: "HellaSwag", cat: "GENERAL", desc: "Common sense reasoning. Saturated at 95%+.", saturation: false, url: "https://arxiv.org/abs/1905.07830", lifecycle: "saturated"},
+        {name: "BBH (BIG-Bench Hard)", cat: "REASONING", desc: "BIG-Bench Hard. 23 challenging tasks. Largely saturated.", saturation: false, url: "https://arxiv.org/abs/2210.09261", lifecycle: "saturated"},
+        {name: "MATH (base)", cat: "MATH", desc: "Competition math (base). Superseded by AIME 2025.", saturation: false, url: "https://arxiv.org/abs/2103.03874", lifecycle: "saturated"},
+        {name: "DROP", cat: "REASONING", desc: "Discrete reasoning over paragraphs. Saturated.", saturation: false, url: "https://arxiv.org/abs/1903.00161", lifecycle: "saturated"},
+        {name: "MGSM", cat: "MULTILINGUAL", desc: "Multilingual grade school math. Tests reasoning across languages.", saturation: false, url: "https://arxiv.org/abs/2210.03057", lifecycle: "saturated"},
         {name: "MedQA (USMLE)", cat: "MEDICAL", desc: "Medical board exam questions (USMLE). Tests clinical reasoning.", saturation: false, url: "https://arxiv.org/abs/2009.13081", lifecycle: "active"},
         {name: "Throughput (tokens/sec)", cat: "INFRASTRUCTURE", desc: "Tokens per second output speed benchmark.", saturation: false, url: "https://artificialanalysis.ai/models", lifecycle: "active"},
         {name: "Tool Call Error Rate", cat: "TOOLS", desc: "Rate of errors in tool/function calls during execution.", saturation: false, url: "https://gorilla.cs.berkeley.edu/leaderboard", lifecycle: "active"},
@@ -2673,10 +2694,15 @@
       }
       function buildLiveBenchmarks() {
         const active = LIVE_BENCHMARKS.filter((b) => b.lifecycle === "active");
+        const saturated = LIVE_BENCHMARKS.filter(
+          (b) => b.lifecycle === "saturated",
+        );
         const dead = LIVE_BENCHMARKS.filter((b) => b.lifecycle === "dead");
         document.getElementById("liveBenchGrid").innerHTML = active
           .map(benchCard)
           .join("");
+        const satGrid = document.getElementById("saturatedBenchGrid");
+        if (satGrid) satGrid.innerHTML = saturated.map(benchCard).join("");
         const deadGrid = document.getElementById("deadBenchGrid");
         if (deadGrid) deadGrid.innerHTML = dead.map(benchCard).join("");
       }
