@@ -379,6 +379,49 @@ def gen_emb_use_cases(embedding_routing: dict) -> str:
     return "[\n" + "\n".join(lines) + "\n      ]"
 
 
+def gen_bench_meta(benchmarks: list) -> str:
+    """Generate BENCH_META object from benchmarks.json (with affiliation data)."""
+    lines = []
+    for b in benchmarks:
+        bid = b["id"]
+        name = b.get("name", bid)
+        desc = b.get("description", "")
+        url = b.get("url", "")
+        creator = b.get("creator", "")
+        risk = b.get("affiliation_risk", "")
+        note = b.get("affiliation_note", "")
+
+        # Build affiliation warning for tooltip
+        affil_str = ""
+        if risk == "high":
+            affil_str = f"⚠️ Conflict: {note}"
+        elif risk == "medium":
+            affil_str = f"Note: {note}"
+
+        # Combine desc + affiliation
+        full_desc = desc
+        if affil_str:
+            full_desc = f"{desc} {affil_str}" if desc else affil_str
+
+        lines.append(
+            f"        {bid}: {{"
+            f"name: {fmt_str(name)}, "
+            f"desc: {fmt_str(full_desc)}, "
+            f"url: {fmt_str(url)}, "
+            f"creator: {fmt_str(creator)}, "
+            f"risk: {fmt_str(risk)}"
+            f"}},"
+        )
+
+    # Add arc alias
+    lines.append(
+        '        arc: {name: "ARC-AGI-2", desc: "Abstract reasoning puzzles. Tests generalization, not memorization.", '
+        'url: "https://arcprize.org", creator: "ARC Prize Foundation", risk: "low"},'
+    )
+
+    return "{\n" + "\n".join(lines) + "\n      }"
+
+
 def gen_live_benchmarks(benchmarks: list) -> str:
     """Generate LIVE_BENCHMARKS array from benchmarks.json (active + dead)."""
     # Separate active (with slight saturation detection) and dead
@@ -621,6 +664,11 @@ def main():
     benchmarks = json.loads((DATA_DIR / "benchmarks.json").read_text())
 
     html = HTML_PATH.read_text(encoding="utf-8")
+
+    # 0. BENCH_META (generated from benchmarks.json with affiliation)
+    html = replace_js_block(
+        html, "BENCH_META", gen_bench_meta(benchmarks), is_array=False
+    )
 
     # 1. VERIFIED date constant
     html = replace_string_const(html, "VERIFIED", today)

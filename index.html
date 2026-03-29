@@ -2089,236 +2089,61 @@
       }
 
       const BENCH_META = {
-        swe_v: {
-          name: "SWE-Bench Verified",
-          desc: "Real GitHub issues solved by AI. Verified subset — less contaminated.",
-          url: "https://scale.com/leaderboard",
-        },
-        swe_pro: {
-          name: "SWE-Bench Pro",
-          desc: "Harder coding tasks from real repos. Less contamination risk.",
-          url: "https://scale.com/leaderboard",
-        },
-        gpqa: {
-          name: "GPQA Diamond",
-          desc: "Graduate-level science questions. PhD-verified, hard to guess.",
-          url: "https://artificial-analysis.com",
-        },
-        hle: {
-          name: "HLE",
-          desc: "Humanity's Last Exam. Hardest known reasoning benchmark.",
-          url: "https://lastexam.ai",
-        },
-        arc: {
-          name: "ARC-AGI-2",
-          desc: "Abstract reasoning puzzles. Tests generalization, not memorization.",
-          url: "https://arcprize.org",
-        },
-        arc_agi_2: {
-          name: "ARC-AGI-2",
-          desc: "Abstract reasoning puzzles. Tests generalization, not memorization.",
-          url: "https://arcprize.org",
-        },
-        tau2: {
-          name: "Tau2-Bench",
-          desc: "Multi-turn tool use. Tests agent reliability over many steps.",
-          url: "https://github.com/sierra-research/tau-bench",
-        },
-        benchlm: {
-          name: "BenchLM",
-          desc: "Aggregate benchmark across practical coding and reasoning tasks.",
-          url: "https://benchlm.ai",
-        },
-        scicode: {
-          name: "SciCode",
-          desc: "Scientific coding problems requiring domain knowledge.",
-          url: "https://scicode-bench.github.io",
-        },
-        terminal_bench_2: {
-          name: "Terminal-Bench 2",
-          desc: "Agentic terminal coding. Real shell interactions.",
-          url: "https://github.com/Terminal-Bench/Terminal-Bench",
-        },
-        grind: {
-          name: "GRIND",
-          desc: "Adaptive reasoning with adjustable difficulty.",
-          url: "https://arxiv.org/abs/2501.06751",
-        },
-        aime_2025: {
-          name: "AIME 2025",
-          desc: "Math competition problems. American Invitational Mathematics Exam.",
-          url: "https://artofproblemsolving.com/wiki/index.php/AIME",
-        },
-        bfcl: {
-          name: "BFCL V4",
-          desc: "Berkeley Function Calling Leaderboard. Tests tool/function calling accuracy.",
-          url: "https://gorilla.cs.berkeley.edu/leaderboard.html",
-        },
-        ifbench: {
-          name: "IFBench",
-          desc: "Instruction following benchmark. Tests compliance with complex instructions.",
-          url: "https://arxiv.org/abs/2502.09980",
-        },
-        simpleqa: {
-          name: "SimpleQA",
-          desc: "Hallucination resistance. Tests factual accuracy on simple questions.",
-          url: "https://openai.com/index/simpleqa",
-        },
-        mmmu: {
-          name: "MMMU",
-          desc: "Massive Multi-discipline Multimodal Understanding. Vision + reasoning.",
-          url: "https://mmmu-benchmark.github.io",
-        },
-        video_mme: {
-          name: "Video-MME",
-          desc: "Video understanding benchmark. Multi-modal evaluation.",
-          url: "https://video-mme.github.io",
-        },
-        scale_seal: {
-          name: "Scale SEAL",
-          desc: "Legal and finance domain evaluation by Scale AI.",
-          url: "https://scale.com",
-        },
-        scraper_code_zyte: {
-          name: "Zyte Scraper Code",
-          desc: "Web scraper code generation quality (ROUGE-1).",
-          url: "https://zyte.com/blog",
-        },
-        promon: {
-          name: "ProMon",
-          desc: "Assembly deobfuscation. Binary reverse engineering.",
-          url: "https://promon.co/resources/reports/",
-        },
-        jsdeobs: {
-          name: "JS Deobfuscation",
-          desc: "JavaScript deobfuscation benchmark.",
-          url: "",
-        },
-        fuzzing_labs: {
-          name: "Fuzzing Labs",
-          desc: "Android APK reverse engineering.",
-          url: "https://fuzzing-labs.com",
-        },
-        medqa: {
-          name: "MedQA (USMLE)",
-          desc: "Medical board exam questions. Tests clinical reasoning.",
-          url: "https://arxiv.org/abs/2009.13081",
-        },
-        lmarena: {
-          name: "LM Arena ELO",
-          desc: "Human preference ranking. Crowdsourced blind model comparisons.",
-          url: "https://lmarena.ai",
-        },
-        human_pref: {
-          name: "Human Preference",
-          desc: "Writing naturalness rated by humans.",
-          url: "https://lmarena.ai",
-        },
-        mmlu_pro: {
-          name: "MMLU-Pro",
-          desc: "Professional-level multi-task knowledge. Harder than original MMLU.",
-          url: "https://arxiv.org/abs/2406.01574",
-        },
-        long_context: {
-          name: "Long Context",
-          desc: "Performance with >200K token inputs.",
-          url: "",
-        },
-        mgsm: {
-          name: "MGSM",
-          desc: "Multilingual grade school math. Tests reasoning across languages.",
-          url: "",
-        },
-        browsecomp: {
-          name: "BrowseComp",
-          desc: "Web browsing comprehension by OpenAI.",
-          url: "https://openai.com/index/browsecomp/",
-        },
-        browseruse: {
-          name: "BrowserUse",
-          desc: "Automated browser interaction benchmark.",
-          url: "https://browser-use.com",
-        },
-        gaia: {
-          name: "GAIA",
-          desc: "General AI Assistant benchmark. Real-world multi-step tasks.",
-          url: "https://huggingface.co/gaia-benchmark",
-        },
-        gdpval: {
-          name: "GDPval",
-          desc: "Artificial Analysis quality index.",
-          url: "https://gdpval.github.io",
-        },
-        tool_error_rate: {
-          name: "Tool Error Rate",
-          desc: "Rate of errors in tool/function calls.",
-          url: "https://gorilla.cs.berkeley.edu/leaderboard",
-        },
-        vending_b2: {
-          name: "VendingBench 2",
-          desc: "E-commerce agent benchmark. Multi-turn purchasing tasks.",
-          url: "https://github.com/sierra-research/tau-bench",
-        },
-        throughput_tps: {
-          name: "Throughput",
-          desc: "Tokens per second. Speed benchmark.",
-          url: "https://artificial-analysis.com",
-        },
-        analytics_accuracy: {
-          name: "Analytics Accuracy",
-          desc: "Data analysis and interpretation accuracy.",
-          url: "https://anamaps.com",
-        },
-        wer_clean: {
-          name: "WER Clean",
-          desc: "Word Error Rate on clean speech. Transcription accuracy.",
-          url: "https://openai.com/research/whisper",
-        },
-        diarization_der: {
-          name: "DER",
-          desc: "Diarization Error Rate. Speaker identification accuracy.",
-          url: "https://github.com/pyannote/pyannote-audio",
-        },
-        video: {
-          name: "Video Understanding",
-          desc: "General video content recognition.",
-          url: "",
-        },
-        code_review_bench: {
-          name: "CodeReviewBench",
-          desc: "How well LLMs identify bugs, security issues, and style problems in real code review.",
-          url: "https://codereviewbench.com/",
-        },
-        writing_bench: {
-          name: "WritingBench",
-          desc: "Academic and professional writing quality evaluation.",
-          url: "https://arxiv.org/abs/2503.05244v3",
-        },
-        some_bench: {
-          name: "SoMe",
-          desc: "Social media content generation quality and AI detectability.",
-          url: "https://arxiv.org/html/2512.14720v1",
-        },
-        turing_bench: {
-          name: "TuringBench",
-          desc: "Human vs AI text detection. Measures writing naturalness.",
-          url: "https://turingbench.ist.psu.edu/",
-        },
-        pmc_patients: {
-          name: "PMC-Patients",
-          desc: "Patient-facing content quality. Clinical-to-patient text translation.",
-          url: "https://pmc-patients.github.io/",
-        },
-        bin_metric: {
-          name: "BinMetric",
-          desc: "Assembly understanding, function recognition, vulnerability detection.",
-          url: "https://arxiv.org/html/2505.07360v1",
-        },
-        mlx_bench: {
-          name: "MLX On-Device Bench",
-          desc: "LLM inference speed and efficiency on Apple Silicon with MLX.",
-          url: "https://arxiv.org/abs/2510.18921",
-        },
+        swe_v: {name: "SWE-Bench Verified", desc: "Real GitHub issues solved by AI. Verified subset with less contamination risk.", url: "https://scale.com/leaderboard", creator: "Scale AI + Princeton", risk: "low"},
+        swe_pro: {name: "SWE-Bench Pro", desc: "Harder coding tasks from real repos. Professional-level, less contamination.", url: "https://scale.com/leaderboard", creator: "Scale AI", risk: "low"},
+        gpqa: {name: "GPQA Diamond", desc: "Graduate-level science questions. PhD-verified, hard to guess. Note: Cohere co-authored. Possible bias toward Cohere models.", url: "https://artificialanalysis.ai/models", creator: "NYU/Cohere", risk: "medium"},
+        hle: {name: "HLE (Humanity's Last Exam)", desc: "Hardest known reasoning benchmark. Expert questions no model aces.", url: "https://lastexam.ai", creator: "Scale AI + academics", risk: "low"},
+        arc_agi_2: {name: "ARC-AGI-2", desc: "Abstract reasoning puzzles. Tests generalization, not memorization.", url: "https://arcprize.org", creator: "ARC Prize Foundation", risk: "low"},
+        tau2: {name: "Tau2-Bench", desc: "Multi-turn tool use. Tests agent reliability over many steps.", url: "https://github.com/sierra-research/tau-bench", creator: "Sierra Research", risk: "low"},
+        terminal_bench_2: {name: "Terminal-Bench 2", desc: "Agentic terminal coding. Real shell interactions and CLI tasks.", url: "https://github.com/harbor-framework/terminal-bench-2", creator: "Harbor Framework", risk: "low"},
+        gdpval: {name: "GDPval-AA", desc: "Economically valuable real-world task benchmark by Artificial Analysis.", url: "https://gdpval.pro/", creator: "Artificial Analysis", risk: "low"},
+        benchlm: {name: "BenchLM", desc: "Aggregate benchmark across practical coding and reasoning tasks.", url: "https://benchlm.ai", creator: "BenchLM", risk: "low"},
+        bfcl: {name: "BFCL V4", desc: "Berkeley Function Calling Leaderboard. Tests tool/function calling accuracy.", url: "https://gorilla.cs.berkeley.edu/leaderboard.html", creator: "UC Berkeley", risk: "low"},
+        lmarena: {name: "LMArena (ELO)", desc: "Human preference ranking. Crowdsourced blind model comparisons.", url: "https://lmarena.ai/leaderboard", creator: "LMSYS/UC Berkeley", risk: "low"},
+        simpleqa: {name: "SimpleQA", desc: "Hallucination resistance. Tests factual accuracy on simple questions. ⚠️ Conflict: Created by OpenAI. May favor GPT models.", url: "https://github.com/openai/simple-evals", creator: "OpenAI", risk: "high"},
+        mmmu: {name: "MMMU", desc: "Massive Multi-discipline Multimodal Understanding. Vision + reasoning.", url: "https://mmmu-benchmark.github.io", creator: "Academic (multi-institution)", risk: "low"},
+        scicode: {name: "SciCode", desc: "Scientific coding problems requiring domain knowledge.", url: "https://scicode-bench.github.io", creator: "Academic", risk: "low"},
+        livebench: {name: "LiveBench", desc: "Monthly fresh evaluation. Contamination-free by design.", url: "https://livebench.ai", creator: "Academic (CMU/Princeton)", risk: "low"},
+        browsecomp: {name: "BrowseComp", desc: "Web browsing comprehension by OpenAI. ⚠️ Conflict: OpenAI internal benchmark.", url: "https://openai.com/index/browsecomp/", creator: "OpenAI", risk: "high"},
+        ifbench: {name: "IFBench", desc: "Instruction following. Tests compliance with complex format constraints.", url: "https://arxiv.org/abs/2502.09980", creator: "Academic", risk: "low"},
+        grind: {name: "GRIND", desc: "Adaptive reasoning with adjustable difficulty.", url: "https://arxiv.org/abs/2501.06751", creator: "Academic", risk: "low"},
+        gaia: {name: "GAIA", desc: "General AI Assistant benchmark. Real-world multi-step tasks. Note: Meta co-authored. HuggingFace hosts.", url: "https://huggingface.co/gaia-benchmark", creator: "HuggingFace + Meta", risk: "medium"},
+        humaneval: {name: "HumanEval", desc: "Python code generation. Saturated — most models score 95%+. ⚠️ Conflict: OpenAI-created. Saturated and contaminated.", url: "https://github.com/openai/human-eval", creator: "OpenAI", risk: "high"},
+        mmlu: {name: "MMLU", desc: "Multi-task knowledge. Saturated and contaminated.", url: "https://arxiv.org/abs/2009.03300", creator: "Academic (UC Berkeley)", risk: "low"},
+        mmlu_pro: {name: "MMLU-Pro", desc: "Professional-level multi-task knowledge. Harder than original MMLU.", url: "https://arxiv.org/abs/2406.01574", creator: "Academic", risk: "low"},
+        gsm8k: {name: "GSM8K", desc: "Grade school math. Saturated — frontier models at 95%+. Note: OpenAI-created dataset.", url: "https://arxiv.org/abs/2110.14168", creator: "OpenAI", risk: "medium"},
+        aime_2025: {name: "AIME 2025", desc: "Math competition problems. American Invitational Mathematics Exam.", url: "https://artofproblemsolving.com/wiki/index.php/AIME", creator: "Mathematical Association of America", risk: "low"},
+        hellaswag: {name: "HellaSwag", desc: "Common sense reasoning. Saturated at 95%+.", url: "https://arxiv.org/abs/1905.07830", creator: "Academic (UW)", risk: "low"},
+        bbh: {name: "BBH (BIG-Bench Hard)", desc: "BIG-Bench Hard. 23 challenging tasks. Largely saturated. Note: Google co-authored BIG-Bench.", url: "https://arxiv.org/abs/2210.09261", creator: "Google + Academic", risk: "medium"},
+        math_base: {name: "MATH (base)", desc: "Competition math (base). Superseded by AIME 2025.", url: "https://arxiv.org/abs/2103.03874", creator: "Academic (UC Berkeley)", risk: "low"},
+        drop: {name: "DROP", desc: "Discrete reasoning over paragraphs. Saturated.", url: "https://arxiv.org/abs/1903.00161", creator: "Academic (Allen AI)", risk: "low"},
+        mgsm: {name: "MGSM", desc: "Multilingual grade school math. Tests reasoning across languages. Note: Google-created multilingual math.", url: "https://arxiv.org/abs/2210.03057", creator: "Google", risk: "medium"},
+        medqa: {name: "MedQA (USMLE)", desc: "Medical board exam questions (USMLE). Tests clinical reasoning.", url: "https://arxiv.org/abs/2009.13081", creator: "Academic", risk: "low"},
+        pubmedqa: {name: "PubMedQA", desc: "Biomedical literature question answering from PubMed abstracts.", url: "https://arxiv.org/abs/1909.06146", creator: "Academic", risk: "low"},
+        scale_seal: {name: "Scale SEAL", desc: "Scale AI domain evaluation. Legal and finance benchmarks. Note: Scale AI paid by model providers for eval.", url: "https://scale.com/leaderboard", creator: "Scale AI", risk: "medium"},
+        throughput_tps: {name: "Throughput (tokens/sec)", desc: "Tokens per second output speed benchmark.", url: "https://artificialanalysis.ai/models", creator: "Artificial Analysis", risk: "low"},
+        tool_error_rate: {name: "Tool Call Error Rate", desc: "Rate of errors in tool/function calls during execution.", url: "https://gorilla.cs.berkeley.edu/leaderboard", creator: "UC Berkeley", risk: "low"},
+        scraper_code_zyte: {name: "Zyte Scraper Code Quality", desc: "Web scraper code generation quality (ROUGE-1 score). Note: Zyte sells scraping tools.", url: "https://zyte.com/blog", creator: "Zyte", risk: "medium"},
+        vending_b2: {name: "VendingBench 2", desc: "Retail/airline/telecom customer-service agent benchmark. Multi-turn tasks.", url: "https://github.com/sierra-research/tau2-bench", creator: "Sierra Research", risk: "low"},
+        human_pref: {name: "Human Preference (writing)", desc: "Writing naturalness rated by humans in blind comparisons.", url: "https://lmarena.ai/leaderboard", creator: "LMSYS/UC Berkeley", risk: "low"},
+        long_context: {name: "Long Context (>200K)", desc: "RULER benchmark. Tests retrieval and reasoning at >200K context.", url: "https://arxiv.org/abs/2404.06654", creator: "Academic (RULER)", risk: "low"},
+        browseruse: {name: "BrowserUse", desc: "Automated browser interaction and web task completion. Note: Browser Use startup benchmark.", url: "https://browser-use.com", creator: "Browser Use", risk: "medium"},
+        jsdeobs: {name: "JS Deobfuscation", desc: "JavaScript deobfuscation. Security research benchmark.", url: "https://github.com/nickcano/llm-deobfuscation-benchmark", creator: "Academic (CCS 2025)", risk: "low"},
+        promon: {name: "ProMon (Assembly RE)", desc: "Assembly deobfuscation. Binary reverse engineering tasks. Note: Promon sells app protection.", url: "https://promon.co/security-news/", creator: "Promon", risk: "medium"},
+        analytics_accuracy: {name: "Analytics Accuracy (Anamap LLM)", desc: "Data analysis and interpretation accuracy. Note: Anamap product benchmark.", url: "https://anamaps.com", creator: "Anamap", risk: "medium"},
+        wer_clean: {name: "WER Clean Speech", desc: "Word Error Rate on clean speech. Transcription accuracy. Note: Test sets from Whisper paper.", url: "https://github.com/openai/whisper", creator: "OpenAI", risk: "medium"},
+        wer_noisy: {name: "WER Noisy Speech", desc: "Word Error Rate on noisy speech. Tests robustness to background noise.", url: "https://arxiv.org/abs/2212.04356", creator: "Academic", risk: "low"},
+        diarization_der: {name: "Diarization Error Rate (DER)", desc: "Diarization Error Rate. Speaker identification accuracy.", url: "https://github.com/pyannote/pyannote-audio", creator: "Academic (pyannote)", risk: "low"},
+        video_mme: {name: "Video-MME", desc: "Video understanding. Multi-modal evaluation across video content.", url: "https://video-mme.github.io", creator: "Academic", risk: "low"},
+        fuzzing_labs: {name: "Fuzzing Labs (APK RE)", desc: "Android APK reverse engineering and analysis. Note: Security company benchmark.", url: "https://github.com/nickcano/llm-apk-analysis", creator: "FuzzingLabs", risk: "medium"},
+        code_review_bench: {name: "CodeReviewBench", desc: "How well LLMs identify bugs, security issues, and style problems in real code review.", url: "https://codereviewbench.com/", creator: "Academic", risk: "low"},
+        writing_bench: {name: "WritingBench", desc: "Academic and professional writing quality evaluation.", url: "https://arxiv.org/abs/2503.05244v3", creator: "Academic", risk: "low"},
+        some_bench: {name: "SoMe", desc: "LLM-based social media agent benchmark. Tests autonomous social interaction.", url: "https://arxiv.org/html/2512.14720v1", creator: "Academic", risk: "low"},
+        turing_bench: {name: "TuringBench", desc: "Human vs machine text detection and authorship attribution.", url: "https://turingbench.ist.psu.edu/", creator: "Academic (Penn State)", risk: "low"},
+        pmc_patients: {name: "PMC-Patients", desc: "Retrieval-based clinical decision support. Patient-to-article and patient-to-patient retrieval.", url: "https://pmc-patients.github.io/", creator: "Academic", risk: "low"},
+        bin_metric: {name: "BinMetric", desc: "Assembly understanding, function recognition, vulnerability detection.", url: "https://arxiv.org/html/2505.07360v1", creator: "Academic (IJCAI 2025)", risk: "low"},
+        mlx_bench: {name: "MLX On-Device Bench", desc: "LLM inference speed and efficiency on Apple Silicon with MLX. Note: Apple co-authored. Tests Apple Silicon.", url: "https://arxiv.org/abs/2510.18921", creator: "Apple/Academic", risk: "medium"},
+        arc: {name: "ARC-AGI-2", desc: "Abstract reasoning puzzles. Tests generalization, not memorization.", url: "https://arcprize.org", creator: "ARC Prize Foundation", risk: "low"},
       };
 
       function showBenchScore(col, val, date, src, event) {
@@ -2337,6 +2162,8 @@
         </div>`;
         if (meta.desc)
           html += `<div class="score-popup-desc">${meta.desc}</div>`;
+        if (meta.creator)
+          html += `<div class="score-popup-date">By: ${meta.creator}${meta.risk === "high" ? ' <span style="color:var(--red)">⚠️ conflict of interest</span>' : meta.risk === "medium" ? ' <span style="color:var(--amber)">⚠ affiliated</span>' : ""}</div>`;
         html += `<div class="score-popup-value">Score: <strong>${val}</strong></div>`;
         if (date)
           html += `<div class="score-popup-date">Measured: ${date}</div>`;

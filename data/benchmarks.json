@@ -15,7 +15,7 @@
     "description": "Real GitHub issues solved by AI. Verified subset with less contamination risk.",
     "creator": "Scale AI + Princeton",
     "affiliation_risk": "low",
-    "affiliation_note": "Independent verification."
+    "affiliation_note": "Independent verification by Scale AI. Princeton created tasks."
   },
   {
     "id": "swe_pro",
@@ -33,7 +33,7 @@
     "description": "Harder coding tasks from real repos. Professional-level, less contamination.",
     "creator": "Scale AI",
     "affiliation_risk": "low",
-    "affiliation_note": "Independent testing."
+    "affiliation_note": "Scale AI created and maintains."
   },
   {
     "id": "gpqa",
@@ -51,7 +51,7 @@
     "description": "Graduate-level science questions. PhD-verified, hard to guess.",
     "creator": "NYU/Cohere",
     "affiliation_risk": "medium",
-    "affiliation_note": "Cohere co-authored."
+    "affiliation_note": "Cohere co-authored. Possible bias toward Cohere models."
   },
   {
     "id": "hle",
@@ -66,7 +66,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Deliberately hard. Current frontier ceiling ~42%. Contamination-resistant.",
-    "description": "Hardest known reasoning benchmark. Expert questions no model aces."
+    "description": "Hardest known reasoning benchmark. Expert questions no model aces.",
+    "creator": "Scale AI + academics",
+    "affiliation_risk": "low",
+    "affiliation_note": "Multi-institution. Expert-sourced questions."
   },
   {
     "id": "arc_agi_2",
@@ -117,7 +120,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Frontier ceiling ~58%.",
-    "description": "Agentic terminal coding. Real shell interactions and CLI tasks."
+    "description": "Agentic terminal coding. Real shell interactions and CLI tasks.",
+    "creator": "Harbor Framework",
+    "affiliation_risk": "low",
+    "affiliation_note": "Open-source community project."
   },
   {
     "id": "gdpval",
@@ -132,7 +138,10 @@
     "max_score": null,
     "lifecycle": "active",
     "notes": "Score is absolute value metric (~1500 range). Frontier ceiling ~1500+.",
-    "description": "Economically valuable real-world task benchmark by Artificial Analysis."
+    "description": "Economically valuable real-world task benchmark by Artificial Analysis.",
+    "creator": "Artificial Analysis",
+    "affiliation_risk": "low",
+    "affiliation_note": "Independent benchmarking company."
   },
   {
     "id": "benchlm",
@@ -147,7 +156,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Composite score. Good for overall ranking comparison.",
-    "description": "Aggregate benchmark across practical coding and reasoning tasks."
+    "description": "Aggregate benchmark across practical coding and reasoning tasks.",
+    "creator": "BenchLM",
+    "affiliation_risk": "low",
+    "affiliation_note": "Independent benchmarking service."
   },
   {
     "id": "bfcl",
@@ -165,7 +177,7 @@
     "description": "Berkeley Function Calling Leaderboard. Tests tool/function calling accuracy.",
     "creator": "UC Berkeley",
     "affiliation_risk": "low",
-    "affiliation_note": "Academic."
+    "affiliation_note": "Academic (Gorilla project)."
   },
   {
     "id": "lmarena",
@@ -201,7 +213,7 @@
     "description": "Hallucination resistance. Tests factual accuracy on simple questions.",
     "creator": "OpenAI",
     "affiliation_risk": "high",
-    "affiliation_note": "Created by OpenAI. May favor GPT architecture."
+    "affiliation_note": "Created by OpenAI. May favor GPT models."
   },
   {
     "id": "mmmu",
@@ -216,7 +228,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Benchmark tracked, scores not yet collected.",
-    "description": "Massive Multi-discipline Multimodal Understanding. Vision + reasoning."
+    "description": "Massive Multi-discipline Multimodal Understanding. Vision + reasoning.",
+    "creator": "Academic (multi-institution)",
+    "affiliation_risk": "low",
+    "affiliation_note": "Large multi-institution effort."
   },
   {
     "id": "scicode",
@@ -231,7 +246,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Benchmark tracked, scores not yet collected.",
-    "description": "Scientific coding problems requiring domain knowledge."
+    "description": "Scientific coding problems requiring domain knowledge.",
+    "creator": "Academic",
+    "affiliation_risk": "low",
+    "affiliation_note": "Scientific coding benchmark."
   },
   {
     "id": "livebench",
@@ -246,7 +264,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Benchmark tracked, scores not yet collected.",
-    "description": "Monthly fresh evaluation. Contamination-free by design."
+    "description": "Monthly fresh evaluation. Contamination-free by design.",
+    "creator": "Academic (CMU/Princeton)",
+    "affiliation_risk": "low",
+    "affiliation_note": "Monthly fresh eval. Contamination-free by design."
   },
   {
     "id": "browsecomp",
@@ -279,7 +300,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Qwen3.5-397B leads at 78.8%.",
-    "description": "Instruction following. Tests compliance with complex format constraints."
+    "description": "Instruction following. Tests compliance with complex format constraints.",
+    "creator": "Academic",
+    "affiliation_risk": "low",
+    "affiliation_note": "Research paper benchmark."
   },
   {
     "id": "grind",
@@ -294,7 +318,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Gemini 2.5 Pro leads at 82.1%.",
-    "description": "Adaptive reasoning with adjustable difficulty."
+    "description": "Adaptive reasoning with adjustable difficulty.",
+    "creator": "Academic",
+    "affiliation_risk": "low",
+    "affiliation_note": "Research paper benchmark."
   },
   {
     "id": "gaia",
@@ -309,7 +336,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Slight saturation at frontier. Claude Sonnet 4.5 leads at 74.6%.",
-    "description": "General AI Assistant benchmark. Real-world multi-step tasks."
+    "description": "General AI Assistant benchmark. Real-world multi-step tasks.",
+    "creator": "HuggingFace + Meta",
+    "affiliation_risk": "medium",
+    "affiliation_note": "Meta co-authored. HuggingFace hosts."
   },
   {
     "id": "humaneval",
@@ -342,7 +372,10 @@
     "max_score": 100,
     "lifecycle": "saturated",
     "notes": "All models 85%+. Saturated. Use MMLU-Pro instead.",
-    "description": "Multi-task knowledge. Saturated and contaminated."
+    "description": "Multi-task knowledge. Saturated and contaminated.",
+    "creator": "Academic (UC Berkeley)",
+    "affiliation_risk": "low",
+    "affiliation_note": "Widely adopted academic benchmark."
   },
   {
     "id": "mmlu_pro",
@@ -357,7 +390,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Better than MMLU for separation. Frontier ceiling ~85%.",
-    "description": "Professional-level multi-task knowledge. Harder than original MMLU."
+    "description": "Professional-level multi-task knowledge. Harder than original MMLU.",
+    "creator": "Academic",
+    "affiliation_risk": "low",
+    "affiliation_note": "Community improvement of MMLU."
   },
   {
     "id": "gsm8k",
@@ -372,7 +408,10 @@
     "max_score": 100,
     "lifecycle": "saturated",
     "notes": "All frontier models 95%+. Use AIME 2025 instead.",
-    "description": "Grade school math. Saturated \u2014 frontier models at 95%+."
+    "description": "Grade school math. Saturated \u2014 frontier models at 95%+.",
+    "creator": "OpenAI",
+    "affiliation_risk": "medium",
+    "affiliation_note": "OpenAI-created dataset."
   },
   {
     "id": "aime_2025",
@@ -387,7 +426,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "GPT-5.4 scored 100%. Gemini 3.1 Pro 92%.",
-    "description": "Math competition problems. American Invitational Mathematics Exam."
+    "description": "Math competition problems. American Invitational Mathematics Exam.",
+    "creator": "Mathematical Association of America",
+    "affiliation_risk": "low",
+    "affiliation_note": "Independent math competition."
   },
   {
     "id": "hellaswag",
@@ -402,7 +444,10 @@
     "max_score": 100,
     "lifecycle": "saturated",
     "notes": "All models 90%+. No meaningful separation.",
-    "description": "Common sense reasoning. Saturated at 95%+."
+    "description": "Common sense reasoning. Saturated at 95%+.",
+    "creator": "Academic (UW)",
+    "affiliation_risk": "low",
+    "affiliation_note": "University of Washington."
   },
   {
     "id": "bbh",
@@ -417,7 +462,10 @@
     "max_score": 100,
     "lifecycle": "saturated",
     "notes": "All frontier models 90%+. Saturated.",
-    "description": "BIG-Bench Hard. 23 challenging tasks. Largely saturated."
+    "description": "BIG-Bench Hard. 23 challenging tasks. Largely saturated.",
+    "creator": "Google + Academic",
+    "affiliation_risk": "medium",
+    "affiliation_note": "Google co-authored BIG-Bench."
   },
   {
     "id": "math_base",
@@ -432,7 +480,10 @@
     "max_score": 100,
     "lifecycle": "saturated",
     "notes": "All frontier models 90%+. Use AIME or HLE for math separation.",
-    "description": "Competition math (base). Superseded by AIME 2025."
+    "description": "Competition math (base). Superseded by AIME 2025.",
+    "creator": "Academic (UC Berkeley)",
+    "affiliation_risk": "low",
+    "affiliation_note": "MATH dataset."
   },
   {
     "id": "drop",
@@ -447,7 +498,10 @@
     "max_score": 100,
     "lifecycle": "saturated",
     "notes": "Saturated.",
-    "description": "Discrete reasoning over paragraphs. Saturated."
+    "description": "Discrete reasoning over paragraphs. Saturated.",
+    "creator": "Academic (Allen AI)",
+    "affiliation_risk": "low",
+    "affiliation_note": "Allen Institute for AI."
   },
   {
     "id": "mgsm",
@@ -462,7 +516,10 @@
     "max_score": 100,
     "lifecycle": "saturated",
     "notes": "Saturated at frontier. GLM-5 leads at 90% but no separation.",
-    "description": "Multilingual grade school math. Tests reasoning across languages."
+    "description": "Multilingual grade school math. Tests reasoning across languages.",
+    "creator": "Google",
+    "affiliation_risk": "medium",
+    "affiliation_note": "Google-created multilingual math."
   },
   {
     "id": "medqa",
@@ -477,7 +534,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Frontier 85-95%. Weakly saturating. Use for medical domain benchmarking.",
-    "description": "Medical board exam questions (USMLE). Tests clinical reasoning."
+    "description": "Medical board exam questions (USMLE). Tests clinical reasoning.",
+    "creator": "Academic",
+    "affiliation_risk": "low",
+    "affiliation_note": "Medical board exam questions. No model affiliation."
   },
   {
     "id": "pubmedqa",
@@ -492,7 +552,10 @@
     "max_score": 100,
     "lifecycle": "planned",
     "notes": "Benchmark tracked, scores not yet collected.",
-    "description": "Biomedical literature question answering from PubMed abstracts."
+    "description": "Biomedical literature question answering from PubMed abstracts.",
+    "creator": "Academic",
+    "affiliation_risk": "low",
+    "affiliation_note": "Biomedical QA from PubMed."
   },
   {
     "id": "scale_seal",
@@ -507,7 +570,10 @@
     "max_score": 100,
     "lifecycle": "planned",
     "notes": "Benchmark tracked, scores not yet collected.",
-    "description": "Scale AI domain evaluation. Legal and finance benchmarks."
+    "description": "Scale AI domain evaluation. Legal and finance benchmarks.",
+    "creator": "Scale AI",
+    "affiliation_risk": "medium",
+    "affiliation_note": "Scale AI paid by model providers for eval."
   },
   {
     "id": "throughput_tps",
@@ -522,7 +588,10 @@
     "max_score": null,
     "lifecycle": "active",
     "notes": "Higher = faster. Llama 4 Scout 2600 tps, Mercury 2 872 tps.",
-    "description": "Tokens per second output speed benchmark."
+    "description": "Tokens per second output speed benchmark.",
+    "creator": "Artificial Analysis",
+    "affiliation_risk": "low",
+    "affiliation_note": "Objective speed measurement."
   },
   {
     "id": "tool_error_rate",
@@ -537,7 +606,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Lower = better. GLM-5-Turbo 0.67% error rate.",
-    "description": "Rate of errors in tool/function calls during execution."
+    "description": "Rate of errors in tool/function calls during execution.",
+    "creator": "UC Berkeley",
+    "affiliation_risk": "low",
+    "affiliation_note": "Academic (Gorilla project)."
   },
   {
     "id": "scraper_code_zyte",
@@ -570,7 +642,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Long-horizon multi-step tasks. Claude Opus 4.5 leads.",
-    "description": "Retail/airline/telecom customer-service agent benchmark. Multi-turn tasks."
+    "description": "Retail/airline/telecom customer-service agent benchmark. Multi-turn tasks.",
+    "creator": "Sierra Research",
+    "affiliation_risk": "low",
+    "affiliation_note": "Same team as Tau-Bench."
   },
   {
     "id": "human_pref",
@@ -585,7 +660,10 @@
     "max_score": null,
     "lifecycle": "active",
     "notes": "Subjective writing quality. Claude Opus 4.6 and GPT-5.4 lead.",
-    "description": "Writing naturalness rated by humans in blind comparisons."
+    "description": "Writing naturalness rated by humans in blind comparisons.",
+    "creator": "LMSYS/UC Berkeley",
+    "affiliation_risk": "low",
+    "affiliation_note": "Crowdsourced blind preference."
   },
   {
     "id": "long_context",
@@ -600,7 +678,10 @@
     "max_score": null,
     "lifecycle": "planned",
     "notes": "Benchmark tracked, scores not yet collected.",
-    "description": "RULER benchmark. Tests retrieval and reasoning at >200K context."
+    "description": "RULER benchmark. Tests retrieval and reasoning at >200K context.",
+    "creator": "Academic (RULER)",
+    "affiliation_risk": "low",
+    "affiliation_note": "Independent context length eval."
   },
   {
     "id": "browseruse",
@@ -633,7 +714,10 @@
     "max_score": 1.0,
     "lifecycle": "planned",
     "notes": "Benchmark tracked, scores not yet collected.",
-    "description": "JavaScript deobfuscation. Security research benchmark."
+    "description": "JavaScript deobfuscation. Security research benchmark.",
+    "creator": "Academic (CCS 2025)",
+    "affiliation_risk": "low",
+    "affiliation_note": "Security conference paper."
   },
   {
     "id": "promon",
@@ -666,7 +750,10 @@
     "max_score": 100,
     "lifecycle": "planned",
     "notes": "Benchmark tracked, scores not yet collected.",
-    "description": "Data analysis and interpretation accuracy."
+    "description": "Data analysis and interpretation accuracy.",
+    "creator": "Anamap",
+    "affiliation_risk": "medium",
+    "affiliation_note": "Anamap product benchmark."
   },
   {
     "id": "wer_clean",
@@ -699,7 +786,10 @@
     "max_score": null,
     "lifecycle": "planned",
     "notes": "Benchmark tracked, scores not yet collected.",
-    "description": "Word Error Rate on noisy speech. Tests robustness to background noise."
+    "description": "Word Error Rate on noisy speech. Tests robustness to background noise.",
+    "creator": "Academic",
+    "affiliation_risk": "low",
+    "affiliation_note": "Standard speech recognition metric."
   },
   {
     "id": "diarization_der",
@@ -714,7 +804,10 @@
     "max_score": null,
     "lifecycle": "planned",
     "notes": "Benchmark tracked, scores not yet collected.",
-    "description": "Diarization Error Rate. Speaker identification accuracy."
+    "description": "Diarization Error Rate. Speaker identification accuracy.",
+    "creator": "Academic (pyannote)",
+    "affiliation_risk": "low",
+    "affiliation_note": "Open-source standard."
   },
   {
     "id": "video_mme",
@@ -729,7 +822,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Native video input required. Gemini 3.1 Pro leads.",
-    "description": "Video understanding. Multi-modal evaluation across video content."
+    "description": "Video understanding. Multi-modal evaluation across video content.",
+    "creator": "Academic",
+    "affiliation_risk": "low",
+    "affiliation_note": "Multi-institution video benchmark."
   },
   {
     "id": "fuzzing_labs",
@@ -744,7 +840,10 @@
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Android binary analysis. Claude Sonnet 4.6 leads.",
-    "description": "Android APK reverse engineering and analysis."
+    "description": "Android APK reverse engineering and analysis.",
+    "creator": "FuzzingLabs",
+    "affiliation_risk": "medium",
+    "affiliation_note": "Security company benchmark."
   },
   {
     "id": "code_review_bench",
@@ -754,7 +853,10 @@
     "volatility": "medium",
     "contamination_risk": "low",
     "url": "https://codereviewbench.com/",
-    "description": "How well LLMs identify bugs, security issues, and style problems in real code review."
+    "description": "How well LLMs identify bugs, security issues, and style problems in real code review.",
+    "creator": "Academic",
+    "affiliation_risk": "low",
+    "affiliation_note": "Independent code review eval."
   },
   {
     "id": "writing_bench",
@@ -764,7 +866,10 @@
     "volatility": "medium",
     "contamination_risk": "low",
     "url": "https://arxiv.org/abs/2503.05244v3",
-    "description": "Academic and professional writing quality evaluation."
+    "description": "Academic and professional writing quality evaluation.",
+    "creator": "Academic",
+    "affiliation_risk": "low",
+    "affiliation_note": "Academic writing quality eval."
   },
   {
     "id": "some_bench",
@@ -774,7 +879,10 @@
     "volatility": "medium",
     "contamination_risk": "low",
     "url": "https://arxiv.org/html/2512.14720v1",
-    "description": "LLM-based social media agent benchmark. Tests autonomous social interaction."
+    "description": "LLM-based social media agent benchmark. Tests autonomous social interaction.",
+    "creator": "Academic",
+    "affiliation_risk": "low",
+    "affiliation_note": "Social media agent benchmark."
   },
   {
     "id": "turing_bench",
@@ -784,7 +892,10 @@
     "volatility": "medium",
     "contamination_risk": "low",
     "url": "https://turingbench.ist.psu.edu/",
-    "description": "Human vs machine text detection and authorship attribution."
+    "description": "Human vs machine text detection and authorship attribution.",
+    "creator": "Academic (Penn State)",
+    "affiliation_risk": "low",
+    "affiliation_note": "Human vs AI detection research."
   },
   {
     "id": "pmc_patients",
@@ -794,7 +905,10 @@
     "volatility": "low",
     "contamination_risk": "low",
     "url": "https://pmc-patients.github.io/",
-    "description": "Retrieval-based clinical decision support. Patient-to-article and patient-to-patient retrieval."
+    "description": "Retrieval-based clinical decision support. Patient-to-article and patient-to-patient retrieval.",
+    "creator": "Academic",
+    "affiliation_risk": "low",
+    "affiliation_note": "Clinical decision support benchmark."
   },
   {
     "id": "bin_metric",
@@ -804,7 +918,10 @@
     "volatility": "low",
     "contamination_risk": "low",
     "url": "https://arxiv.org/html/2505.07360v1",
-    "description": "Assembly understanding, function recognition, vulnerability detection."
+    "description": "Assembly understanding, function recognition, vulnerability detection.",
+    "creator": "Academic (IJCAI 2025)",
+    "affiliation_risk": "low",
+    "affiliation_note": "Binary RE academic benchmark."
   },
   {
     "id": "mlx_bench",
@@ -814,6 +931,9 @@
     "volatility": "medium",
     "contamination_risk": "low",
     "url": "https://arxiv.org/abs/2510.18921",
-    "description": "LLM inference speed and efficiency on Apple Silicon with MLX."
+    "description": "LLM inference speed and efficiency on Apple Silicon with MLX.",
+    "creator": "Apple/Academic",
+    "affiliation_risk": "medium",
+    "affiliation_note": "Apple co-authored. Tests Apple Silicon."
   }
 ]
