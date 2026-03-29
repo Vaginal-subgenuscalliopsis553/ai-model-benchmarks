@@ -94,6 +94,15 @@
       "is_moderated": true,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-05",
+      "effective_context": "1M (full utilization confirmed by Anthropic)",
+      "caching": "prompt_caching",
+      "training_data_date": "2025-05",
+      "rate_limits_note": "Tier-dependent. See docs.anthropic.com/en/docs/about-claude/models",
+      "updated": "2026-03-29",
+      "source": "https://docs.anthropic.com/en/docs/about-claude/models"
     }
   },
   {
@@ -167,6 +176,14 @@
       "is_moderated": true,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-04",
+      "effective_context": "200K",
+      "caching": "prompt_caching",
+      "training_data_date": "2025-04",
+      "updated": "2026-03-29",
+      "source": "https://docs.anthropic.com/en/docs/about-claude/models"
     }
   },
   {
@@ -288,6 +305,14 @@
       "is_moderated": false,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-06",
+      "effective_context": "2M (Google claims full utilization)",
+      "caching": "context_caching",
+      "training_data_date": "2025-06",
+      "updated": "2026-03-29",
+      "source": "https://ai.google.dev/gemini-api/docs/models"
     }
   },
   {
@@ -441,6 +466,14 @@
       "is_moderated": true,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-06",
+      "effective_context": "1M",
+      "caching": "prompt_caching",
+      "training_data_date": "2025-06",
+      "updated": "2026-03-29",
+      "source": "https://platform.openai.com/docs/models"
     }
   },
   {
@@ -509,6 +542,14 @@
       "is_moderated": true,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-03",
+      "effective_context": "200K",
+      "caching": "prompt_caching",
+      "training_data_date": "2025-03",
+      "updated": "2026-03-29",
+      "source": "https://platform.openai.com/docs/models"
     }
   },
   {
@@ -659,6 +700,14 @@
       "is_moderated": true,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-05",
+      "effective_context": "1M",
+      "caching": "prompt_caching",
+      "training_data_date": "2025-05",
+      "updated": "2026-03-29",
+      "source": "https://docs.anthropic.com/en/docs/about-claude/models"
     }
   },
   {
@@ -710,6 +759,14 @@
       "is_moderated": false,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-04",
+      "effective_context": "200K",
+      "caching": "prompt_caching",
+      "training_data_date": "2025-04",
+      "updated": "2026-03-29",
+      "source": "https://docs.anthropic.com/en/docs/about-claude/models"
     }
   },
   {
@@ -763,6 +820,14 @@
       "is_moderated": true,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-04",
+      "effective_context": "200K",
+      "caching": "prompt_caching",
+      "training_data_date": "2025-04",
+      "updated": "2026-03-29",
+      "source": "https://docs.anthropic.com/en/docs/about-claude/models"
     }
   },
   {
@@ -1060,6 +1125,14 @@
       "is_moderated": false,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-03",
+      "effective_context": "1M",
+      "caching": "context_caching",
+      "training_data_date": "2025-03",
+      "updated": "2026-03-29",
+      "source": "https://ai.google.dev/gemini-api/docs/models"
     }
   },
   {
@@ -1535,6 +1608,14 @@
       "is_moderated": false,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-06",
+      "effective_context": "1M (claimed)",
+      "caching": "none_documented",
+      "training_data_date": "2025-06",
+      "updated": "2026-03-29",
+      "source": "https://qwenlm.github.io/blog/"
     }
   },
   {
@@ -1781,6 +1862,14 @@
       "is_moderated": false,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-06",
+      "effective_context": "128K",
+      "caching": "prompt_caching",
+      "training_data_date": "2025-06",
+      "updated": "2026-03-29",
+      "source": "https://api-docs.deepseek.com"
     }
   },
   {
@@ -1829,6 +1918,14 @@
       "is_moderated": false,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-01",
+      "effective_context": "128K (nominal), ~64K (RULER effective)",
+      "caching": "none_documented",
+      "training_data_date": "2025-01",
+      "updated": "2026-03-29",
+      "source": "https://api-docs.deepseek.com/news/news250120"
     }
   },
   {
@@ -2098,6 +2195,14 @@
       "is_moderated": false,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-03",
+      "effective_context": "1M",
+      "caching": "context_caching",
+      "training_data_date": "2025-03",
+      "updated": "2026-03-29",
+      "source": "https://ai.google.dev/gemini-api/docs/models"
     }
   },
   {
@@ -2381,6 +2486,14 @@
       "is_moderated": false,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-06",
+      "effective_context": "128K",
+      "caching": "none_documented",
+      "training_data_date": "2025-06",
+      "updated": "2026-03-29",
+      "source": "https://docs.mistral.ai/getting-started/models/premier/"
     }
   },
   {
@@ -2549,6 +2662,14 @@
       "is_moderated": false,
       "source": "openrouter",
       "updated": "2026-03-29"
+    },
+    "manual": {
+      "knowledge_cutoff": "2025-03",
+      "effective_context": "1M (claimed)",
+      "caching": "provider_dependent",
+      "training_data_date": "2025-03",
+      "updated": "2026-03-29",
+      "source": "https://ai.meta.com/blog/llama-4/"
     }
   },
   {

@@ -19,6 +19,7 @@ EMBEDDINGS_FILE = REPO_ROOT / "data" / "embeddings.json"
 BENCHMARKS_FILE = REPO_ROOT / "data" / "benchmarks.json"
 ROUTING_FILE = REPO_ROOT / "data" / "routing.json"
 PRICING_FILE = REPO_ROOT / "data" / "pricing.json"
+MANUAL_FILE = REPO_ROOT / "data" / "manual_capabilities.json"
 
 REQUIRED_MODEL_FIELDS = {"id", "name", "provider", "tier", "pricing", "context_length"}
 REQUIRED_BENCHMARK_FIELDS = {"id", "name", "category", "lifecycle"}
@@ -298,6 +299,35 @@ def main():
     model_ids = {m["id"] for m in models} if models else set()
     if routing:
         validate_routing(routing, model_ids)
+
+    # Validate manual capabilities staleness
+    manual = load_json(MANUAL_FILE)
+    if manual and isinstance(manual, dict):
+        manual_models = manual.get("models", {})
+        today = datetime.now()
+        stale_count = 0
+        for mid, data in manual_models.items():
+            updated = data.get("updated", "")
+            if not updated:
+                warn(f"manual_capabilities.json: {mid} missing 'updated' date")
+                continue
+            try:
+                updated_dt = datetime.strptime(updated, "%Y-%m-%d")
+                age_days = (today - updated_dt).days
+                if age_days > 90:
+                    stale_count += 1
+                    msg = f"manual_capabilities.json: {mid} is {age_days}d old (threshold=90d)"
+                    if args.strict:
+                        error(msg)
+                    else:
+                        warn(msg)
+            except ValueError:
+                error(
+                    f"manual_capabilities.json: {mid} invalid 'updated' date '{updated}'"
+                )
+        print(
+            f"  manual_capabilities.json: {len(manual_models)} entries ({stale_count} stale)"
+        )
 
     print()
 

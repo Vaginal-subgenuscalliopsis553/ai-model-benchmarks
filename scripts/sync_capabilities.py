@@ -24,6 +24,7 @@ except ImportError:
 
 REPO_ROOT = Path(__file__).parent.parent
 MODELS_FILE = REPO_ROOT / "data" / "models.json"
+MANUAL_FILE = REPO_ROOT / "data" / "manual_capabilities.json"
 OPENROUTER_API = "https://openrouter.ai/api/v1/models"
 
 # Map OpenRouter supported_parameters to our capability flags
@@ -211,6 +212,35 @@ def main():
                 print(json.dumps(m.get("capabilities", {}), indent=2))
         print("\nDry run — no files written.")
         return
+
+    # Merge manual capabilities (knowledge_cutoff, effective_context, caching, etc.)
+    if MANUAL_FILE.exists():
+        manual = load_json(MANUAL_FILE)
+        manual_models = manual.get("models", {})
+        merged = 0
+        stale = 0
+        for model in updated_models:
+            manual_data = manual_models.get(model["id"])
+            if not manual_data:
+                continue
+            # Check staleness (>90 days)
+            manual_updated = manual_data.get("updated", "")
+            if (
+                manual_updated
+                and manual_updated
+                < (
+                    date.today().replace(day=1)
+                    - __import__("datetime").timedelta(days=90)
+                ).isoformat()
+            ):
+                stale += 1
+                print(f"  STALE: {model['id']} manual data from {manual_updated}")
+            # Merge into model (manual fields don't overwrite auto fields)
+            if "manual" not in model:
+                model["manual"] = {}
+            model["manual"] = {k: v for k, v in manual_data.items()}
+            merged += 1
+        print(f"\nManual data merged: {merged} models ({stale} stale)")
 
     save_json(MODELS_FILE, updated_models)
     print(f"\nDone. Capabilities synced: {today}")
