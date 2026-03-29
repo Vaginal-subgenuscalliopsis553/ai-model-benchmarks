@@ -1,0 +1,45 @@
+# AI Model Benchmarks 2026
+
+> Community-driven reference for AI model selection: benchmarks, pricing, routing, embeddings.
+
+## What this is
+
+A structured dataset of 119 AI models compared across 48 benchmarks with:
+- Per-score freshness dates (every score has a measured date and source URL)
+- Auto-updated pricing from OpenRouter API (daily)
+- Task routing recommendations (best model for each task at each budget tier)
+- Benchmark lifecycle tracking (active, saturated, dead)
+- 26 embedding models with MTEB scores
+
+## Why it exists
+
+Most benchmark tables show one score per model, measured at some unknown date. Scores go stale, prices change, new models appear. This repo solves that by tracking *when* each score was measured, *where* it came from, and whether the benchmark itself is still meaningful.
+
+## How to use this data
+
+- **Pick a model for a task:** see data/routing.json → quick_matrix (25 task categories)
+- **Compare models:** see data/models.json (119 models with scores, pricing, metadata)
+- **Find embeddings:** see data/embeddings.json (26 models with MTEB scores)
+- **Understand benchmarks:** see data/benchmarks.json (48 benchmarks with lifecycle status)
+
+## Data format
+
+All data is in JSON files under data/. Every score includes:
+- `value` — the benchmark score
+- `measured` — date when the score was collected (YYYY-MM or YYYY-MM-DD)
+- `source` — URL to the leaderboard or paper
+
+## Trust model
+
+- No self-reported scores from model providers
+- 16 independent sources in trust hierarchy (see docs/METHODOLOGY.md)
+- Automated validation (scripts/validate.py)
+- Full git history as audit trail
+
+## Links
+
+- Repository: https://github.com/LARIkoz/ai-model-benchmarks
+- Portal: https://larikoz.github.io/ai-model-benchmarks/
+- Data: https://github.com/LARIkoz/ai-model-benchmarks/tree/main/data
+- Methodology: https://github.com/LARIkoz/ai-model-benchmarks/blob/main/docs/METHODOLOGY.md
+- Contributing: https://github.com/LARIkoz/ai-model-benchmarks/blob/main/docs/CONTRIBUTING.md

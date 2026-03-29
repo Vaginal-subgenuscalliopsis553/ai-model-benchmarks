@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://larikoz.github.io/ai-model-benchmarks/sitemap.xml

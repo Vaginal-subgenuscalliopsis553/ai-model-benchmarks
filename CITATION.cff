@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "AI Model Benchmarks 2026"
+type: dataset
+authors:
+  - alias: LARIkoz
+date-released: 2026-03-29
+url: "https://github.com/LARIkoz/ai-model-benchmarks"
+license: MIT
+keywords:
+  - ai-benchmarks
+  - llm-comparison
+  - model-selection
+  - pricing
+  - task-routing
+abstract: >-
+  Community-driven dataset of 119 AI models compared across 48 benchmarks
+  with per-score freshness dates, auto-updated pricing, and task routing
+  recommendations. All scores sourced from independent third-party
+  leaderboards. Updated weekly.

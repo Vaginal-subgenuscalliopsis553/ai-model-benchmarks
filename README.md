@@ -1,20 +1,39 @@
 # AI Model Benchmarks 2026
 
-> **Community-driven reference for AI model selection: benchmarks, pricing, routing, embeddings**
+> **You need to pick an AI model for your task and budget. You want data you can trust is current.**
 
-[![Last Update](https://img.shields.io/badge/last_update-2026--03--29-blue)](CHANGELOG.md)
+[![Daily Prices](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/daily-prices.yml/badge.svg)](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/daily-prices.yml)
+[![Validation](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/validate.yml/badge.svg)](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/validate.yml)
 [![Models](https://img.shields.io/badge/models-119-green)](data/models.json)
+[![Benchmarks](https://img.shields.io/badge/benchmarks-48-blue)](data/benchmarks.json)
 [![Embeddings](https://img.shields.io/badge/embeddings-26-purple)](data/embeddings.json)
 [![License](https://img.shields.io/badge/license-MIT-orange)](LICENSE)
 
-## What makes this different
+**119 models · 48 benchmarks · 26 embeddings · auto-updated pricing · task routing**
 
-Most benchmark tables show one score per model, measured at some unknown date. This repo tracks:
+[Browse the portal](https://larikoz.github.io/ai-model-benchmarks/) · [View the data](data/) · [Methodology](docs/METHODOLOGY.md)
 
-- **Per-score freshness dates** — every benchmark value has a `measured` field showing when it was collected
-- **Auto-updated pricing** — script fetches current prices from OpenRouter API (daily GitHub Action planned)
-- **Task routing recommendations** — not just "best model" but "best model for your specific task at your budget"
-- **Benchmark lifecycle** — active vs saturated vs dead benchmarks, contamination risk, volatility
+## The problem
+
+Benchmark tables go stale the day they're published. Prices change weekly. New models appear monthly. Most comparisons show a single score per model with no date, no source link, and no way to know if the number is still valid.
+
+## What this solves
+
+- **Per-score freshness dates** — every benchmark value has a `measured` date and a `source` URL. You can verify any number yourself
+- **Auto-updated pricing** — fetched daily from OpenRouter API via GitHub Actions ([see the workflow](.github/workflows/daily-prices.yml))
+- **Task routing** — not just "best model" but "best model for your specific task at your budget" (25 task categories, 4 tiers: quality, budget, free)
+- **Benchmark lifecycle** — which benchmarks still separate models (active) vs which are noise (saturated/dead/contaminated)
+- **No self-reported scores** — all data from [16 independent sources](docs/METHODOLOGY.md) (Scale AI SEAL, Artificial Analysis, BFCL, LM Arena, LiveBench...)
+
+## Why trust this data
+
+Every score is auditable:
+
+1. **Source URL** — click through to the original leaderboard or paper
+2. **Measured date** — know exactly when the score was collected
+3. **Automated validation** — `scripts/validate.py` enforces schema, catches missing sources, flags stale scores
+4. **Git history** — every change is tracked, every update has a commit
+5. **CI pipeline** — daily price updates + PR validation via GitHub Actions
 
 ## Quick start
 
@@ -89,13 +108,11 @@ Pull requests welcome. Requirements:
 
 See `docs/CONTRIBUTING.md` for full guidelines.
 
-## Planned update schedule
+## Update schedule
 
-- **Daily (planned — 06:00 UTC):** Prices fetched from OpenRouter API via GitHub Action, `data/pricing.json` updated
+- **Daily (06:00 UTC):** Prices fetched from OpenRouter API via [GitHub Action](.github/workflows/daily-prices.yml)
+- **On every PR:** Schema validation via [GitHub Action](.github/workflows/validate.yml)
 - **Weekly (manual):** Benchmark scores reviewed against leaderboards, freshness dates updated
-- **On PR (planned):** Schema validation via GitHub Action
-
-> **Note:** GitHub Actions workflows for daily price updates and PR validation are not yet deployed. Until CI is active, run `python scripts/fetch_openrouter_prices.py` and `python scripts/validate.py` manually before submitting a PR.
 
 ## Sources
 
