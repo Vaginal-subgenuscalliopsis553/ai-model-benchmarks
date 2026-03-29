@@ -31,9 +31,9 @@
         "source": "https://artificialanalysis.ai/models"
       },
       "hle": {
-        "value": 36.7,
+        "value": 40.0,
         "measured": "2026-03",
-        "source": "https://lastexam.ai"
+        "source": "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf"
       },
       "arc_agi_2": {
         "value": 68.8,
@@ -258,7 +258,7 @@
         "source": "https://scale.com/leaderboard"
       },
       "gpqa": {
-        "value": 94.3,
+        "value": 94.1,
         "measured": "2026-03",
         "source": "https://artificialanalysis.ai/models"
       },
@@ -391,7 +391,7 @@
         "value": 80,
         "measured": "2026-03",
         "source": "https://scale.com/leaderboard",
-        "notes": "~80 estimated"
+        "notes": "estimated"
       },
       "swe_pro": {
         "value": 41.8,

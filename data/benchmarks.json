@@ -128,11 +128,11 @@
     "contamination_risk": "low",
     "volatility": "medium",
     "update_frequency": "quarterly",
-    "url": "https://artificialanalysis.ai/models",
+    "url": "https://gdpval.pro/",
     "max_score": null,
     "lifecycle": "active",
     "notes": "Score is absolute value metric (~1500 range). Frontier ceiling ~1500+.",
-    "description": "Artificial Analysis quality index. Real-world work value."
+    "description": "Economically valuable real-world task benchmark by Artificial Analysis."
   },
   {
     "id": "benchlm",
@@ -196,7 +196,7 @@
     "update_frequency": "quarterly",
     "url": "https://github.com/openai/simple-evals",
     "max_score": 100,
-    "lifecycle": "planned",
+    "lifecycle": "active",
     "notes": "Benchmark tracked, scores not yet collected.",
     "description": "Hallucination resistance. Tests factual accuracy on simple questions.",
     "creator": "OpenAI",
@@ -214,7 +214,7 @@
     "update_frequency": "quarterly",
     "url": "https://mmmu-benchmark.github.io",
     "max_score": 100,
-    "lifecycle": "planned",
+    "lifecycle": "active",
     "notes": "Benchmark tracked, scores not yet collected.",
     "description": "Massive Multi-discipline Multimodal Understanding. Vision + reasoning."
   },
@@ -229,7 +229,7 @@
     "update_frequency": "quarterly",
     "url": "https://scicode-bench.github.io",
     "max_score": 100,
-    "lifecycle": "planned",
+    "lifecycle": "active",
     "notes": "Benchmark tracked, scores not yet collected.",
     "description": "Scientific coding problems requiring domain knowledge."
   },
@@ -244,7 +244,7 @@
     "update_frequency": "monthly",
     "url": "https://livebench.ai",
     "max_score": 100,
-    "lifecycle": "planned",
+    "lifecycle": "active",
     "notes": "Benchmark tracked, scores not yet collected.",
     "description": "Monthly fresh evaluation. Contamination-free by design."
   },
@@ -257,7 +257,7 @@
     "contamination_risk": "low",
     "volatility": "medium",
     "update_frequency": "quarterly",
-    "url": "https://github.com/openai/simple-evals",
+    "url": "https://openai.com/index/browsecomp/",
     "max_score": 100,
     "lifecycle": "active",
     "notes": "MiniMax M2.5 leads at 76.3%.",
@@ -322,7 +322,7 @@
     "update_frequency": "N/A",
     "url": "https://github.com/openai/human-eval",
     "max_score": 100,
-    "lifecycle": "dead",
+    "lifecycle": "saturated",
     "notes": "All frontier models 90%+. No separation. Replaced by SWE-Bench.",
     "description": "Python code generation. Saturated \u2014 most models score 95%+.",
     "creator": "OpenAI",
@@ -340,7 +340,7 @@
     "update_frequency": "N/A",
     "url": "https://arxiv.org/abs/2009.03300",
     "max_score": 100,
-    "lifecycle": "dead",
+    "lifecycle": "saturated",
     "notes": "All models 85%+. Saturated. Use MMLU-Pro instead.",
     "description": "Multi-task knowledge. Saturated and contaminated."
   },
@@ -370,7 +370,7 @@
     "update_frequency": "N/A",
     "url": "https://arxiv.org/abs/2110.14168",
     "max_score": 100,
-    "lifecycle": "dead",
+    "lifecycle": "saturated",
     "notes": "All frontier models 95%+. Use AIME 2025 instead.",
     "description": "Grade school math. Saturated \u2014 frontier models at 95%+."
   },
@@ -400,7 +400,7 @@
     "update_frequency": "N/A",
     "url": "https://arxiv.org/abs/1905.07830",
     "max_score": 100,
-    "lifecycle": "dead",
+    "lifecycle": "saturated",
     "notes": "All models 90%+. No meaningful separation.",
     "description": "Common sense reasoning. Saturated at 95%+."
   },
@@ -415,7 +415,7 @@
     "update_frequency": "N/A",
     "url": "https://arxiv.org/abs/2210.09261",
     "max_score": 100,
-    "lifecycle": "dead",
+    "lifecycle": "saturated",
     "notes": "All frontier models 90%+. Saturated.",
     "description": "BIG-Bench Hard. 23 challenging tasks. Largely saturated."
   },
@@ -430,7 +430,7 @@
     "update_frequency": "N/A",
     "url": "https://arxiv.org/abs/2103.03874",
     "max_score": 100,
-    "lifecycle": "dead",
+    "lifecycle": "saturated",
     "notes": "All frontier models 90%+. Use AIME or HLE for math separation.",
     "description": "Competition math (base). Superseded by AIME 2025."
   },
@@ -445,7 +445,7 @@
     "update_frequency": "N/A",
     "url": "https://arxiv.org/abs/1903.00161",
     "max_score": 100,
-    "lifecycle": "dead",
+    "lifecycle": "saturated",
     "notes": "Saturated.",
     "description": "Discrete reasoning over paragraphs. Saturated."
   },
@@ -460,7 +460,7 @@
     "update_frequency": "N/A",
     "url": "https://arxiv.org/abs/2210.03057",
     "max_score": 100,
-    "lifecycle": "dead",
+    "lifecycle": "saturated",
     "notes": "Saturated at frontier. GLM-5 leads at 90% but no separation.",
     "description": "Multilingual grade school math. Tests reasoning across languages."
   },
@@ -503,7 +503,7 @@
     "contamination_risk": "low",
     "volatility": "medium",
     "update_frequency": "quarterly",
-    "url": "https://scale.com",
+    "url": "https://scale.com/leaderboard",
     "max_score": 100,
     "lifecycle": "planned",
     "notes": "Benchmark tracked, scores not yet collected.",
@@ -566,11 +566,11 @@
     "contamination_risk": "low",
     "volatility": "medium",
     "update_frequency": "quarterly",
-    "url": "https://github.com/sierra-research/tau-bench",
+    "url": "https://github.com/sierra-research/tau2-bench",
     "max_score": 100,
     "lifecycle": "active",
     "notes": "Long-horizon multi-step tasks. Claude Opus 4.5 leads.",
-    "description": "E-commerce agent benchmark. Multi-turn purchasing tasks."
+    "description": "Retail/airline/telecom customer-service agent benchmark. Multi-turn tasks."
   },
   {
     "id": "human_pref",
@@ -588,24 +588,9 @@
     "description": "Writing naturalness rated by humans in blind comparisons."
   },
   {
-    "id": "video",
-    "name": "Video Understanding",
-    "category": "multimodal",
-    "what_it_measures": "Video comprehension and temporal reasoning",
-    "saturation": false,
-    "contamination_risk": "low",
-    "volatility": "medium",
-    "update_frequency": "quarterly",
-    "url": "https://video-mme.github.io",
-    "max_score": 100,
-    "lifecycle": "planned",
-    "notes": "Benchmark tracked, scores not yet collected.",
-    "description": "General video content recognition and understanding."
-  },
-  {
     "id": "long_context",
     "name": "Long Context (>200K)",
-    "category": "infrastructure",
+    "category": "general",
     "what_it_measures": "Effective context utilization beyond 200K tokens",
     "saturation": false,
     "contamination_risk": "low",
@@ -615,7 +600,7 @@
     "max_score": null,
     "lifecycle": "planned",
     "notes": "Benchmark tracked, scores not yet collected.",
-    "description": "Performance with >200K token inputs. Tests context utilization."
+    "description": "RULER benchmark. Tests retrieval and reasoning at >200K context."
   },
   {
     "id": "browseruse",
@@ -784,22 +769,22 @@
   {
     "id": "some_bench",
     "name": "SoMe",
-    "category": "writing",
+    "category": "agentic",
     "lifecycle": "active",
     "volatility": "medium",
     "contamination_risk": "low",
     "url": "https://arxiv.org/html/2512.14720v1",
-    "description": "Social media content generation quality and AI detectability."
+    "description": "LLM-based social media agent benchmark. Tests autonomous social interaction."
   },
   {
     "id": "turing_bench",
     "name": "TuringBench",
-    "category": "writing",
+    "category": "trust",
     "lifecycle": "active",
     "volatility": "medium",
     "contamination_risk": "low",
     "url": "https://turingbench.ist.psu.edu/",
-    "description": "Human vs AI text detection. Measures writing naturalness."
+    "description": "Human vs machine text detection and authorship attribution."
   },
   {
     "id": "pmc_patients",
@@ -809,7 +794,7 @@
     "volatility": "low",
     "contamination_risk": "low",
     "url": "https://pmc-patients.github.io/",
-    "description": "Patient-facing content quality. Clinical-to-patient text translation."
+    "description": "Retrieval-based clinical decision support. Patient-to-article and patient-to-patient retrieval."
   },
   {
     "id": "bin_metric",

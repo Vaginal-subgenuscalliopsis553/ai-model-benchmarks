@@ -1027,7 +1027,7 @@
       </div>
       <h1 class="hero-title">AI Model Benchmarks<br />2026</h1>
       <p class="hero-subtitle">
-        Definitive reference for AI model selection. 119 models × 55+ categories × 55 benchmarks. Sources: LM Council, Artificial Analysis, Scale AI
+        Definitive reference for AI model selection. 119 models × 55+ categories × 54 benchmarks. Sources: LM Council, Artificial Analysis, Scale AI
         SEAL, BFCL V4, BenchLM.ai, MTEB, Zyte, Speko.
       </p>
       <div class="hero-stats">
@@ -1040,7 +1040,7 @@
           <span class="hero-stat-label">categories</span>
         </div>
         <div class="hero-stat">
-          <span class="hero-stat-num">55</span>
+          <span class="hero-stat-num">54</span>
           <span class="hero-stat-label">benchmarks</span>
         </div>
         <div class="hero-stat">
@@ -1462,10 +1462,10 @@
 
       // MEGA-TABLE rows
       const MODELS = [
-        {tier: "1", name: "Claude Opus 4.6", priceIn: 5.0, priceOut: 25.0, ctx: "1M", maxOut: "128K", caps: "VTRS", swe_v: {v:80.8,d:"2026-03",s:"https://scale.com/leaderboard"}, swe_pro: {v:45.9,d:"2026-03",s:"https://scale.com/leaderboard"}, gpqa: {v:91.3,d:"2026-03",s:"https://artificialanalysis.ai/models"}, hle: {v:36.7,d:"2026-03",s:"https://lastexam.ai"}, arc: {v:68.8,d:"2026-03",s:"https://arcprize.org"}, tau2: {v:99.3,d:"2026-03",s:"https://github.com/sierra-research/tau-bench"}, benchlm: {v:76,d:"2026-03",s:"https://benchlm.ai"}, best: "Reasoning, tool calling, writing, medical content, code review"},
+        {tier: "1", name: "Claude Opus 4.6", priceIn: 5.0, priceOut: 25.0, ctx: "1M", maxOut: "128K", caps: "VTRS", swe_v: {v:80.8,d:"2026-03",s:"https://scale.com/leaderboard"}, swe_pro: {v:45.9,d:"2026-03",s:"https://scale.com/leaderboard"}, gpqa: {v:91.3,d:"2026-03",s:"https://artificialanalysis.ai/models"}, hle: {v:40.0,d:"2026-03",s:"https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf"}, arc: {v:68.8,d:"2026-03",s:"https://arcprize.org"}, tau2: {v:99.3,d:"2026-03",s:"https://github.com/sierra-research/tau-bench"}, benchlm: {v:76,d:"2026-03",s:"https://benchlm.ai"}, best: "Reasoning, tool calling, writing, medical content, code review"},
         {tier: "1", name: "Claude Opus 4.5", priceIn: 5.0, priceOut: 25.0, ctx: "200K", maxOut: "64K", caps: "VTRS", swe_v: {v:80.9,d:"2026-03",s:"https://scale.com/leaderboard"}, swe_pro: {v:45.9,d:"2026-03",s:"https://scale.com/leaderboard"}, gpqa: {v:87.0,d:"2026-03",s:"https://artificialanalysis.ai/models"}, hle: {v:28.4,d:"2026-03",s:"https://lastexam.ai"}, arc: null, tau2: null, benchlm: {v:62,d:"2026-03",s:"https://benchlm.ai"}, best: "Reasoning, long-horizon tasks"},
         {tier: "1", name: "Claude Opus 4.1", priceIn: 15.0, priceOut: 75.0, ctx: "200K", maxOut: "32K", caps: "VTRS", swe_v: null, swe_pro: null, gpqa: null, hle: null, arc: null, tau2: null, benchlm: null, best: "Function calling"},
-        {tier: "1", name: "Gemini 3.1 Pro", priceIn: 2.0, priceOut: 12.0, ctx: "1M", maxOut: "65K", caps: "VTRSA", swe_v: {v:80.6,d:"2026-03",s:"https://scale.com/leaderboard"}, swe_pro: {v:43.3,d:"2026-03",s:"https://scale.com/leaderboard"}, gpqa: {v:94.3,d:"2026-03",s:"https://artificialanalysis.ai/models"}, hle: {v:37.2,d:"2026-03",s:"https://lastexam.ai"}, arc: {v:77.1,d:"2026-03",s:"https://arcprize.org"}, tau2: null, benchlm: {v:83,d:"2026-03",s:"https://benchlm.ai"}, best: "GPQA, ARC-AGI-2, medical research, vision, long documents"},
+        {tier: "1", name: "Gemini 3.1 Pro", priceIn: 2.0, priceOut: 12.0, ctx: "1M", maxOut: "65K", caps: "VTRSA", swe_v: {v:80.6,d:"2026-03",s:"https://scale.com/leaderboard"}, swe_pro: {v:43.3,d:"2026-03",s:"https://scale.com/leaderboard"}, gpqa: {v:94.1,d:"2026-03",s:"https://artificialanalysis.ai/models"}, hle: {v:37.2,d:"2026-03",s:"https://lastexam.ai"}, arc: {v:77.1,d:"2026-03",s:"https://arcprize.org"}, tau2: null, benchlm: {v:83,d:"2026-03",s:"https://benchlm.ai"}, best: "GPQA, ARC-AGI-2, medical research, vision, long documents"},
         {tier: "1", name: "Gemini 3 Pro", priceIn: 2.0, priceOut: 12.0, ctx: "65K", maxOut: "32K", caps: "VRSI", swe_v: {v:76.2,d:"2026-03",s:"https://scale.com/leaderboard"}, swe_pro: {v:43.3,d:"2026-03",s:"https://scale.com/leaderboard"}, gpqa: {v:91.9,d:"2026-03",s:"https://artificialanalysis.ai/models"}, hle: null, arc: null, tau2: null, benchlm: null, best: "Scraper code generation, vision"},
         {tier: "1", name: "GPT-5.4", priceIn: 2.5, priceOut: 15.0, ctx: "1M", maxOut: "128K", caps: "VTRS", swe_v: {v:80,d:"2026-03",s:"https://scale.com/leaderboard"}, swe_pro: {v:41.8,d:"2026-03",s:"https://scale.com/leaderboard"}, gpqa: {v:92.0,d:"2026-03",s:"https://artificialanalysis.ai/models"}, hle: {v:41.6,d:"2026-03",s:"https://lastexam.ai"}, arc: {v:73.3,d:"2026-03",s:"https://arcprize.org"}, tau2: null, benchlm: {v:80,d:"2026-03",s:"https://benchlm.ai"}, best: "Math, agentic coding, JS deobfuscation, scientific coding"},
         {tier: "1", name: "GPT-5.2", priceIn: 1.75, priceOut: 14.0, ctx: "400K", maxOut: "128K", caps: "VTRS", swe_v: {v:80.0,d:"2026-03",s:"https://scale.com/leaderboard"}, swe_pro: {v:41.0,d:"2026-03",s:"https://scale.com/leaderboard"}, gpqa: {v:92.4,d:"2026-03",s:"https://artificialanalysis.ai/models"}, hle: {v:35.4,d:"2026-03",s:"https://lastexam.ai"}, arc: null, tau2: null, benchlm: {v:67,d:"2026-03",s:"https://benchlm.ai"}, best: "GPQA, general knowledge"},
@@ -1975,29 +1975,25 @@
         {name: "ARC-AGI-2", cat: "REASONING", desc: "Abstract reasoning puzzles. Tests generalization, not memorization.", saturation: false, url: "https://arcprize.org", lifecycle: "active"},
         {name: "Tau2-Bench", cat: "TOOLS", desc: "Multi-turn tool use. Tests agent reliability over many steps.", saturation: "slight", url: "https://github.com/sierra-research/tau-bench", lifecycle: "active"},
         {name: "Terminal-Bench 2", cat: "AGENTIC", desc: "Agentic terminal coding. Real shell interactions and CLI tasks.", saturation: false, url: "https://github.com/harbor-framework/terminal-bench-2", lifecycle: "active"},
-        {name: "GDPval-AA", cat: "AGENTIC", desc: "Artificial Analysis quality index. Real-world work value.", saturation: false, url: "https://artificialanalysis.ai/models", lifecycle: "active"},
+        {name: "GDPval-AA", cat: "AGENTIC", desc: "Economically valuable real-world task benchmark by Artificial Analysis.", saturation: false, url: "https://gdpval.pro/", lifecycle: "active"},
         {name: "BenchLM", cat: "GENERAL", desc: "Aggregate benchmark across practical coding and reasoning tasks.", saturation: false, url: "https://benchlm.ai", lifecycle: "active"},
         {name: "BFCL V4", cat: "TOOLS", desc: "Berkeley Function Calling Leaderboard. Tests tool/function calling accuracy.", saturation: "slight", url: "https://gorilla.cs.berkeley.edu/leaderboard.html", lifecycle: "active"},
         {name: "LMArena (ELO)", cat: "PREFERENCE", desc: "Human preference ranking. Crowdsourced blind model comparisons.", saturation: false, url: "https://lmarena.ai/leaderboard", lifecycle: "active"},
-        {name: "BrowseComp", cat: "WEB", desc: "Web browsing comprehension by OpenAI.", saturation: false, url: "https://github.com/openai/simple-evals", lifecycle: "active"},
+        {name: "SimpleQA", cat: "TRUST", desc: "Hallucination resistance. Tests factual accuracy on simple questions.", saturation: false, url: "https://github.com/openai/simple-evals", lifecycle: "active"},
+        {name: "MMMU", cat: "MULTIMODAL", desc: "Massive Multi-discipline Multimodal Understanding. Vision + reasoning.", saturation: false, url: "https://mmmu-benchmark.github.io", lifecycle: "active"},
+        {name: "SciCode", cat: "CODING", desc: "Scientific coding problems requiring domain knowledge.", saturation: false, url: "https://scicode-bench.github.io", lifecycle: "active"},
+        {name: "LiveBench", cat: "GENERAL", desc: "Monthly fresh evaluation. Contamination-free by design.", saturation: false, url: "https://livebench.ai", lifecycle: "active"},
+        {name: "BrowseComp", cat: "WEB", desc: "Web browsing comprehension by OpenAI.", saturation: false, url: "https://openai.com/index/browsecomp/", lifecycle: "active"},
         {name: "IFBench", cat: "INSTRUCTION", desc: "Instruction following. Tests compliance with complex format constraints.", saturation: false, url: "https://arxiv.org/abs/2502.09980", lifecycle: "active"},
         {name: "GRIND", cat: "REASONING", desc: "Adaptive reasoning with adjustable difficulty.", saturation: false, url: "https://arxiv.org/abs/2501.06751", lifecycle: "active"},
         {name: "GAIA", cat: "AGENTIC", desc: "General AI Assistant benchmark. Real-world multi-step tasks.", saturation: "slight", url: "https://huggingface.co/gaia-benchmark", lifecycle: "active"},
-        {name: "HumanEval", cat: "CODING", desc: "Python code generation. Saturated — most models score 95%+.", saturation: false, url: "https://github.com/openai/human-eval", lifecycle: "dead"},
-        {name: "MMLU", cat: "GENERAL", desc: "Multi-task knowledge. Saturated and contaminated.", saturation: false, url: "https://arxiv.org/abs/2009.03300", lifecycle: "dead"},
         {name: "MMLU-Pro", cat: "GENERAL", desc: "Professional-level multi-task knowledge. Harder than original MMLU.", saturation: false, url: "https://arxiv.org/abs/2406.01574", lifecycle: "active"},
-        {name: "GSM8K", cat: "MATH", desc: "Grade school math. Saturated — frontier models at 95%+.", saturation: false, url: "https://arxiv.org/abs/2110.14168", lifecycle: "dead"},
         {name: "AIME 2025", cat: "MATH", desc: "Math competition problems. American Invitational Mathematics Exam.", saturation: false, url: "https://artofproblemsolving.com/wiki/index.php/AIME", lifecycle: "active"},
-        {name: "HellaSwag", cat: "GENERAL", desc: "Common sense reasoning. Saturated at 95%+.", saturation: false, url: "https://arxiv.org/abs/1905.07830", lifecycle: "dead"},
-        {name: "BBH (BIG-Bench Hard)", cat: "REASONING", desc: "BIG-Bench Hard. 23 challenging tasks. Largely saturated.", saturation: false, url: "https://arxiv.org/abs/2210.09261", lifecycle: "dead"},
-        {name: "MATH (base)", cat: "MATH", desc: "Competition math (base). Superseded by AIME 2025.", saturation: false, url: "https://arxiv.org/abs/2103.03874", lifecycle: "dead"},
-        {name: "DROP", cat: "REASONING", desc: "Discrete reasoning over paragraphs. Saturated.", saturation: false, url: "https://arxiv.org/abs/1903.00161", lifecycle: "dead"},
-        {name: "MGSM", cat: "MULTILINGUAL", desc: "Multilingual grade school math. Tests reasoning across languages.", saturation: false, url: "https://arxiv.org/abs/2210.03057", lifecycle: "dead"},
         {name: "MedQA (USMLE)", cat: "MEDICAL", desc: "Medical board exam questions (USMLE). Tests clinical reasoning.", saturation: false, url: "https://arxiv.org/abs/2009.13081", lifecycle: "active"},
         {name: "Throughput (tokens/sec)", cat: "INFRASTRUCTURE", desc: "Tokens per second output speed benchmark.", saturation: false, url: "https://artificialanalysis.ai/models", lifecycle: "active"},
         {name: "Tool Call Error Rate", cat: "TOOLS", desc: "Rate of errors in tool/function calls during execution.", saturation: false, url: "https://gorilla.cs.berkeley.edu/leaderboard", lifecycle: "active"},
         {name: "Zyte Scraper Code Quality", cat: "WEB_SCRAPING", desc: "Web scraper code generation quality (ROUGE-1 score).", saturation: false, url: "https://zyte.com/blog", lifecycle: "active"},
-        {name: "VendingBench 2", cat: "AGENTIC", desc: "E-commerce agent benchmark. Multi-turn purchasing tasks.", saturation: false, url: "https://github.com/sierra-research/tau-bench", lifecycle: "active"},
+        {name: "VendingBench 2", cat: "AGENTIC", desc: "Retail/airline/telecom customer-service agent benchmark. Multi-turn tasks.", saturation: false, url: "https://github.com/sierra-research/tau2-bench", lifecycle: "active"},
         {name: "Human Preference (writing)", cat: "PREFERENCE", desc: "Writing naturalness rated by humans in blind comparisons.", saturation: false, url: "https://lmarena.ai/leaderboard", lifecycle: "active"},
         {name: "BrowserUse", cat: "WEB", desc: "Automated browser interaction and web task completion.", saturation: false, url: "https://browser-use.com", lifecycle: "active"},
         {name: "ProMon (Assembly RE)", cat: "SECURITY", desc: "Assembly deobfuscation. Binary reverse engineering tasks.", saturation: false, url: "https://promon.co/security-news/", lifecycle: "active"},
@@ -2006,9 +2002,9 @@
         {name: "Fuzzing Labs (APK RE)", cat: "SECURITY", desc: "Android APK reverse engineering and analysis.", saturation: false, url: "https://github.com/nickcano/llm-apk-analysis", lifecycle: "active"},
         {name: "CodeReviewBench", cat: "CODING", desc: "How well LLMs identify bugs, security issues, and style problems in real code review.", saturation: false, url: "https://codereviewbench.com/", lifecycle: "active"},
         {name: "WritingBench", cat: "WRITING", desc: "Academic and professional writing quality evaluation.", saturation: false, url: "https://arxiv.org/abs/2503.05244v3", lifecycle: "active"},
-        {name: "SoMe", cat: "WRITING", desc: "Social media content generation quality and AI detectability.", saturation: false, url: "https://arxiv.org/html/2512.14720v1", lifecycle: "active"},
-        {name: "TuringBench", cat: "WRITING", desc: "Human vs AI text detection. Measures writing naturalness.", saturation: false, url: "https://turingbench.ist.psu.edu/", lifecycle: "active"},
-        {name: "PMC-Patients", cat: "MEDICAL", desc: "Patient-facing content quality. Clinical-to-patient text translation.", saturation: false, url: "https://pmc-patients.github.io/", lifecycle: "active"},
+        {name: "SoMe", cat: "AGENTIC", desc: "LLM-based social media agent benchmark. Tests autonomous social interaction.", saturation: false, url: "https://arxiv.org/html/2512.14720v1", lifecycle: "active"},
+        {name: "TuringBench", cat: "TRUST", desc: "Human vs machine text detection and authorship attribution.", saturation: false, url: "https://turingbench.ist.psu.edu/", lifecycle: "active"},
+        {name: "PMC-Patients", cat: "MEDICAL", desc: "Retrieval-based clinical decision support. Patient-to-article and patient-to-patient retrieval.", saturation: false, url: "https://pmc-patients.github.io/", lifecycle: "active"},
         {name: "BinMetric", cat: "SECURITY", desc: "Assembly understanding, function recognition, vulnerability detection.", saturation: false, url: "https://arxiv.org/html/2505.07360v1", lifecycle: "active"},
         {name: "MLX On-Device Bench", cat: "LOCAL", desc: "LLM inference speed and efficiency on Apple Silicon with MLX.", saturation: false, url: "https://arxiv.org/abs/2510.18921", lifecycle: "active"},
       ];
