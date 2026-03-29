@@ -49,7 +49,7 @@ Each model includes:
 
 Fields: id, name, provider, dimensions, context_length, pricing, mteb_overall, mteb_retrieval, best_for, source.
 
-## benchmarks.json — 48 Benchmarks
+## benchmarks.json — 54 Benchmarks
 
 Fields: id, name, category, lifecycle (active/saturated/dead/planned), volatility, contamination_risk, url.
 
