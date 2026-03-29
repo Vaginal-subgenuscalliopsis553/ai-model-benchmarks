@@ -5,13 +5,13 @@
 [![Daily Prices](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/daily-prices.yml/badge.svg)](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/daily-prices.yml)
 [![Validation](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/validate.yml/badge.svg)](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/validate.yml)
 [![Models](https://img.shields.io/badge/models-119-green)](data/models.json)
-[![Benchmarks](https://img.shields.io/badge/benchmarks-55-blue)](data/benchmarks.json)
+[![Benchmarks](https://img.shields.io/badge/benchmarks-54-blue)](data/benchmarks.json)
 [![Embeddings](https://img.shields.io/badge/embeddings-26-purple)](data/embeddings.json)
 [![License](https://img.shields.io/badge/license-MIT-orange)](LICENSE)
 
 [🇷🇺 Русская версия](README_ru.md)
 
-**119 models · 55 benchmarks · 26 embeddings · 97 capability profiles · auto-updated daily**
+**119 models · 54 benchmarks · 26 embeddings · 97 capability profiles · auto-updated daily**
 
 [Browse the portal](https://larikoz.github.io/ai-model-benchmarks/) · [View the data](data/) · [Methodology](docs/METHODOLOGY.md)
 
@@ -90,7 +90,7 @@ data/
   models.json              — 119 models: scores, pricing, capabilities, metadata
   manual_capabilities.json — 15 top models: knowledge cutoff, caching, effective context
   embeddings.json          — 26 embedding models with MTEB scores and use-case routing
-  benchmarks.json          — 55 benchmarks with lifecycle status
+  benchmarks.json          — 54 benchmarks with lifecycle status
   routing.json             — Task routing: KING picks, FREE routing, quick decision matrix
   pricing.json             — Cache pricing by provider (auto-updated daily)
 
