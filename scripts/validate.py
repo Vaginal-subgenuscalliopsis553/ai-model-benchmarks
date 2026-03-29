@@ -162,10 +162,10 @@ def validate_models(models: list[dict], strict: bool):
 
             source = score.get("source")
             if not source:
-                warn(f"models.json: {mid}.{bench_id} missing 'source' URL")
+                error(f"models.json: {mid}.{bench_id} missing 'source' URL")
             elif not source.startswith("https://"):
-                warn(
-                    f"models.json: {mid}.{bench_id} source is not an https URL: '{source}'"
+                error(
+                    f"models.json: {mid}.{bench_id} source must be https URL, got: '{source}'"
                 )
 
             if age_days > threshold_days:
@@ -198,12 +198,12 @@ def validate_embeddings(embeddings: list[dict]):
             error(f"embeddings.json: duplicate id '{eid}'")
         seen_ids.add(eid)
 
-        # Source check
+        # Source check (enforced)
         source = emb.get("source")
         if not source:
-            warn(f"embeddings.json: {eid} missing 'source'")
+            error(f"embeddings.json: {eid} missing 'source'")
         elif not source.startswith("https://"):
-            warn(f"embeddings.json: {eid} source is not an https URL: '{source}'")
+            error(f"embeddings.json: {eid} source must be https URL, got: '{source}'")
 
     print(f"  embeddings.json: {len(embeddings)} entries, {len(seen_ids)} unique IDs")
 
@@ -232,7 +232,6 @@ def validate_routing(routing: dict, model_ids: set[str] = None):
     quick_matrix = routing.get("quick_matrix", [])
     if not quick_matrix:
         warn("routing.json: quick_matrix is empty")
-        return
 
     for item in quick_matrix:
         if "task" not in item:
@@ -245,7 +244,7 @@ def validate_routing(routing: dict, model_ids: set[str] = None):
             for field in ["use_id", "backup_id", "free_id"]:
                 mid = item.get(field)
                 if mid and mid not in model_ids:
-                    warn(
+                    error(
                         f"routing.json: quick_matrix '{item.get('task', '')}' {field}='{mid}' not in models.json"
                     )
 
@@ -269,7 +268,7 @@ def validate_routing(routing: dict, model_ids: set[str] = None):
                     if isinstance(pick, dict):
                         mid = pick.get("id")
                         if mid and mid not in model_ids:
-                            warn(
+                            error(
                                 f"routing.json: king_picks {group_name}.{cat_name}.{pick_key} id='{mid}' not in models.json"
                             )
 
