@@ -28,7 +28,7 @@
       "gpqa": {
         "value": 91.3,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "hle": {
         "value": 36.7,
@@ -43,18 +43,18 @@
       "tau2": {
         "value": 99.3,
         "measured": "2026-03",
-        "source": "https://github.com/tau-bench/tau-bench"
+        "source": "https://github.com/sierra-research/tau-bench"
       },
       "terminal_bench_2": {
         "value": 48.5,
         "measured": "2026-03",
-        "source": "https://github.com/Terminal-Bench/Terminal-Bench"
+        "source": "https://github.com/harbor-framework/terminal-bench-2"
       },
       "gdpval": {
         "value": 1500,
         "measured": "2026-03",
         "notes": "~1500+",
-        "source": "https://gdpval.github.io"
+        "source": "https://artificialanalysis.ai/models"
       },
       "benchlm": {
         "value": 76,
@@ -64,7 +64,7 @@
       "lmarena": {
         "value": 1476,
         "measured": "2026-03",
-        "source": "https://lmarena.ai"
+        "source": "https://lmarena.ai/leaderboard"
       }
     },
     "best_for": [
@@ -134,7 +134,7 @@
       "gpqa": {
         "value": 87.0,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "hle": {
         "value": 28.4,
@@ -149,7 +149,7 @@
       "lmarena": {
         "value": 1345,
         "measured": "2026-03",
-        "source": "https://lmarena.ai"
+        "source": "https://lmarena.ai/leaderboard"
       }
     },
     "best_for": [
@@ -260,7 +260,7 @@
       "gpqa": {
         "value": 94.3,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "hle": {
         "value": 37.2,
@@ -342,7 +342,7 @@
       "gpqa": {
         "value": 91.9,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       }
     },
     "best_for": [
@@ -401,7 +401,7 @@
       "gpqa": {
         "value": 92.0,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "hle": {
         "value": 41.6,
@@ -416,13 +416,13 @@
       "terminal_bench_2": {
         "value": 57.6,
         "measured": "2026-03",
-        "source": "https://github.com/Terminal-Bench/Terminal-Bench"
+        "source": "https://github.com/harbor-framework/terminal-bench-2"
       },
       "gdpval": {
         "value": 1480,
         "measured": "2026-03",
         "notes": "~1480",
-        "source": "https://gdpval.github.io"
+        "source": "https://artificialanalysis.ai/models"
       },
       "benchlm": {
         "value": 80,
@@ -505,7 +505,7 @@
       "gpqa": {
         "value": 92.4,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "hle": {
         "value": 35.4,
@@ -574,7 +574,7 @@
       "gpqa": {
         "value": 91.5,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "hle": {
         "value": 39.9,
@@ -584,7 +584,7 @@
       "terminal_bench_2": {
         "value": 53.0,
         "measured": "2026-03",
-        "source": "https://github.com/Terminal-Bench/Terminal-Bench"
+        "source": "https://github.com/harbor-framework/terminal-bench-2"
       },
       "humaneval": {
         "value": 97.5,
@@ -646,7 +646,7 @@
       "gpqa": {
         "value": 89.9,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "arc_agi_2": {
         "value": 58.3,
@@ -656,7 +656,7 @@
       "terminal_bench_2": {
         "value": 53.0,
         "measured": "2026-03",
-        "source": "https://github.com/Terminal-Bench/Terminal-Bench"
+        "source": "https://github.com/harbor-framework/terminal-bench-2"
       },
       "benchlm": {
         "value": 76,
@@ -666,7 +666,7 @@
       "lmarena": {
         "value": 941,
         "measured": "2026-03",
-        "source": "https://lmarena.ai"
+        "source": "https://lmarena.ai/leaderboard"
       },
       "scraper_code_zyte": {
         "value": 0.835,
@@ -854,7 +854,7 @@
       "gpqa": {
         "value": 87.5,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "hle": {
         "value": 25.4,
@@ -959,7 +959,7 @@
       "gpqa": {
         "value": 68.2,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "hle": {
         "value": 30.5,
@@ -969,12 +969,12 @@
       "tau2": {
         "value": 98.2,
         "measured": "2026-03",
-        "source": "https://github.com/tau-bench/tau-bench"
+        "source": "https://github.com/sierra-research/tau-bench"
       },
       "terminal_bench_2": {
         "value": 56.2,
         "measured": "2026-03",
-        "source": "https://github.com/Terminal-Bench/Terminal-Bench"
+        "source": "https://github.com/harbor-framework/terminal-bench-2"
       },
       "humaneval": {
         "value": 90,
@@ -1042,7 +1042,7 @@
         "value": 0.67,
         "measured": "2026-03",
         "notes": "error rate %",
-        "source": "https://tau-bench.github.io"
+        "source": "https://github.com/sierra-research/tau2-bench"
       }
     },
     "best_for": [
@@ -1088,7 +1088,7 @@
       "gpqa": {
         "value": 86.4,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "hle": {
         "value": 21.6,
@@ -1242,7 +1242,7 @@
       "gpqa": {
         "value": 47,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "hle": {
         "value": 32,
@@ -1252,7 +1252,7 @@
       "browsecomp": {
         "value": 76.3,
         "measured": "2026-03",
-        "source": "https://openai.com/research/browsecomp"
+        "source": "https://github.com/openai/simple-evals"
       }
     },
     "best_for": [
@@ -1308,7 +1308,7 @@
       "gdpval": {
         "value": 1495,
         "measured": "2026-03",
-        "source": "https://gdpval.github.io"
+        "source": "https://artificialanalysis.ai/models"
       }
     },
     "best_for": [
@@ -1361,7 +1361,7 @@
       "gpqa": {
         "value": 87.6,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "hle": {
         "value": 31.5,
@@ -1371,7 +1371,7 @@
       "lmarena": {
         "value": 988,
         "measured": "2026-03",
-        "source": "https://lmarena.ai"
+        "source": "https://lmarena.ai/leaderboard"
       }
     },
     "best_for": [
@@ -1425,7 +1425,7 @@
       "tau2": {
         "value": 95.9,
         "measured": "2026-03",
-        "source": "https://github.com/tau-bench/tau-bench"
+        "source": "https://github.com/sierra-research/tau-bench"
       }
     },
     "best_for": [
@@ -1475,7 +1475,7 @@
       "gpqa": {
         "value": 81.0,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       }
     },
     "best_for": [
@@ -1575,12 +1575,12 @@
       "gpqa": {
         "value": 88.4,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "ifbench": {
         "value": 78.8,
         "measured": "2026-03",
-        "source": "https://huggingface.co/spaces/IFEval/IFBench"
+        "source": "https://arxiv.org/abs/2502.09980"
       }
     },
     "best_for": [
@@ -1640,7 +1640,7 @@
       "gpqa": {
         "value": 86.6,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       }
     },
     "best_for": [
@@ -1690,7 +1690,7 @@
       "gpqa": {
         "value": 84.2,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "mmlu_pro": {
         "value": 85.3,
@@ -2116,12 +2116,12 @@
       "gpqa": {
         "value": 90.4,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "ifbench": {
         "value": 78.0,
         "measured": "2026-03",
-        "source": "https://huggingface.co/spaces/IFEval/IFBench"
+        "source": "https://arxiv.org/abs/2502.09980"
       },
       "scraper_code_zyte": {
         "value": 0.817,
@@ -2302,7 +2302,7 @@
         "value": 872,
         "measured": "2026-03",
         "notes": "tokens/sec",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       }
     },
     "best_for": [
@@ -2629,7 +2629,7 @@
       "gpqa": {
         "value": 69.8,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "mmlu_pro": {
         "value": 80.5,
@@ -2886,7 +2886,7 @@
       "gpqa": {
         "value": 57.2,
         "measured": "2026-03",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       },
       "mmlu_pro": {
         "value": 74.3,
@@ -2897,7 +2897,7 @@
         "value": 2600,
         "measured": "2026-03",
         "notes": "tokens/sec \u2014 speed king",
-        "source": "https://artificial-analysis.com"
+        "source": "https://artificialanalysis.ai/models"
       }
     },
     "best_for": [
@@ -2945,7 +2945,7 @@
       "tau2": {
         "value": 98.8,
         "measured": "2026-03",
-        "source": "https://github.com/tau-bench/tau-bench"
+        "source": "https://github.com/sierra-research/tau-bench"
       }
     },
     "best_for": [
@@ -4660,7 +4660,7 @@
       "tau2": {
         "value": 98.8,
         "measured": "2026-03",
-        "source": "https://github.com/tau-bench/tau-bench"
+        "source": "https://github.com/sierra-research/tau-bench"
       }
     },
     "best_for": [
@@ -4993,7 +4993,7 @@
       "wer_clean": {
         "value": 4.2,
         "measured": "2026-03",
-        "source": "https://openai.com/research/whisper"
+        "source": "https://github.com/openai/whisper"
       }
     },
     "best_for": [
@@ -5021,7 +5021,7 @@
       "wer_clean": {
         "value": 5.1,
         "measured": "2026-03",
-        "source": "https://openai.com/research/whisper"
+        "source": "https://github.com/openai/whisper"
       }
     },
     "best_for": [
@@ -5048,7 +5048,7 @@
       "wer_clean": {
         "value": 3.5,
         "measured": "2026-03",
-        "source": "https://deepgram.com/learn/nova-3-speech-model"
+        "source": "https://developers.deepgram.com/docs/models-overview"
       }
     },
     "best_for": [
@@ -5158,7 +5158,7 @@
       "wer_clean": {
         "value": 4.0,
         "measured": "2026-03",
-        "source": "https://cloud.google.com/speech-to-text/docs/chirp-model"
+        "source": "https://cloud.google.com/speech-to-text/v2/docs/chirp-model"
       }
     },
     "best_for": [
