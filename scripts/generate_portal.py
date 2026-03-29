@@ -98,7 +98,7 @@ def key_to_label(key: str) -> str:
 
 def bench_label(bench: str | None) -> str:
     if not bench:
-        return '"practical"'
+        return '"expert eval"'
     # Стандартные названия бенчмарков
     mapping = {
         "swe_v": "SWE-V",
@@ -379,6 +379,58 @@ def gen_emb_use_cases(embedding_routing: dict) -> str:
     return "[\n" + "\n".join(lines) + "\n      ]"
 
 
+def gen_live_benchmarks(benchmarks: list) -> str:
+    """Generate LIVE_BENCHMARKS array from benchmarks.json (active + dead)."""
+    # Separate active (with slight saturation detection) and dead
+    cat_mapping = {
+        "coding": "CODING",
+        "reasoning": "REASONING",
+        "tools": "TOOLS",
+        "general": "GENERAL",
+        "agentic": "AGENTIC",
+        "vision": "VISION",
+        "domain": "DOMAIN",
+        "trust": "TRUST",
+        "preference": "PREFERENCE",
+        "instruction": "INSTRUCTION",
+        "science": "SCIENCE",
+        "web": "WEB",
+        "reverse_engineering": "SECURITY",
+        "medical": "MEDICAL",
+        "speed": "SPEED",
+        "audio": "AUDIO",
+        "video": "VIDEO",
+        "math": "MATH",
+        "multilingual": "MULTILINGUAL",
+    }
+    lines = []
+    for b in benchmarks:
+        lifecycle = b.get("lifecycle", "")
+        if lifecycle not in ("active", "dead"):
+            continue
+        cat = b.get("category", "general")
+        cat_label = cat_mapping.get(cat, cat.upper())
+        desc = b.get("description", "")
+        url = b.get("url", "")
+        # Detect slight saturation from volatility/notes
+        saturation = "false"
+        notes = b.get("notes", "")
+        if "slight" in notes.lower() or "approaching" in notes.lower():
+            saturation = json.dumps("slight")
+
+        lines.append(
+            "        {"
+            f"name: {fmt_str(b['name'])}, "
+            f"cat: {fmt_str(cat_label)}, "
+            f"desc: {fmt_str(desc)}, "
+            f"saturation: {saturation}, "
+            f"url: {fmt_str(url)}, "
+            f"lifecycle: {fmt_str(lifecycle)}"
+            "},"
+        )
+    return "[\n" + "\n".join(lines) + "\n      ]"
+
+
 def gen_cache_providers(providers: list) -> str:
     lines = []
     for p in providers:
@@ -615,7 +667,12 @@ def main():
         is_array=True,
     )
 
-    # 9. Hero stats
+    # 9. LIVE_BENCHMARKS (from benchmarks.json)
+    html = replace_js_block(
+        html, "LIVE_BENCHMARKS", gen_live_benchmarks(benchmarks), is_array=True
+    )
+
+    # 10. Hero stats
     model_count = len(models)
     bench_count = len(benchmarks)
 
