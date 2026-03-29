@@ -613,6 +613,84 @@ def main():
         f"index.html обновлён. Модели: {model_count}, бенчмарки: {bench_count}, дата: {today}"
     )
 
+    # Generate llms-full.txt (AI agent discovery file)
+    generate_llms_full(models, routing, today)
+
+
+def generate_llms_full(models: list, routing: dict, today: str):
+    """Generate llms-full.txt with routing table and model summary for AI agents."""
+    lines = []
+    lines.append("# AI Model Benchmarks 2026 — Full Data for AI Agents")
+    lines.append(f"# Updated: {today}")
+    lines.append("")
+    lines.append("This file contains the complete routing table and model summary.")
+    lines.append("For full JSON data, fetch these URLs directly:")
+    lines.append(
+        "- Models: https://larikoz.github.io/ai-model-benchmarks/data/models.json"
+    )
+    lines.append(
+        "- Routing: https://larikoz.github.io/ai-model-benchmarks/data/routing.json"
+    )
+    lines.append(
+        "- Embeddings: https://larikoz.github.io/ai-model-benchmarks/data/embeddings.json"
+    )
+    lines.append("")
+
+    # Quick matrix
+    lines.append("## Quick Decision Matrix (25 tasks)")
+    lines.append("")
+    lines.append("| Task | Best Model | Backup | Free |")
+    lines.append("|------|-----------|--------|------|")
+    for item in routing.get("quick_matrix", []):
+        lines.append(
+            f"| {item['task']} | {item['use']} | {item.get('backup', '—')} | {item.get('free', '—')} |"
+        )
+
+    lines.append("")
+    lines.append(f"## All {len(models)} Models — Summary")
+    lines.append("")
+    lines.append(
+        "| Model | Provider | Tier | Context | Max Out | $/M in | $/M out | Caps | Best For |"
+    )
+    lines.append(
+        "|-------|----------|------|---------|---------|--------|---------|------|----------|"
+    )
+    for m in models:
+        tier = {0: "FREE", 1: "T1", 2: "T2", 3: "T3"}.get(m["tier"], "?")
+        ctx = m.get("context_length", "?")
+        if isinstance(ctx, int):
+            ctx = f"{ctx // 1000}K" if ctx < 1_000_000 else f"{ctx // 1_000_000}M"
+        max_out = m.get("max_output_tokens", "—")
+        if isinstance(max_out, int):
+            max_out = f"{max_out // 1000}K"
+        price_in = m.get("pricing", {}).get("input", "—")
+        price_out = m.get("pricing", {}).get("output", "—")
+        caps = m.get("capabilities", {})
+        cap_flags = []
+        if caps.get("vision"):
+            cap_flags.append("V")
+        if caps.get("tool_calling"):
+            cap_flags.append("T")
+        if caps.get("reasoning"):
+            cap_flags.append("R")
+        if caps.get("structured_output"):
+            cap_flags.append("S")
+        cap_str = "".join(cap_flags) or "—"
+        best = ", ".join(m.get("best_for", [])) or "—"
+        if len(best) > 50:
+            best = best[:47] + "..."
+        lines.append(
+            f"| {m['name']} | {m['provider']} | {tier} | {ctx} | {max_out} | {price_in} | {price_out} | {cap_str} | {best} |"
+        )
+
+    lines.append("")
+    lines.append("## Capability Legend")
+    lines.append("V=Vision, T=Tool Calling, R=Reasoning, S=Structured Output")
+
+    llms_full_path = ROOT / "llms-full.txt"
+    llms_full_path.write_text("\n".join(lines), encoding="utf-8")
+    print(f"llms-full.txt обновлён. {len(models)} models, {len(lines)} lines")
+
 
 if __name__ == "__main__":
     main()

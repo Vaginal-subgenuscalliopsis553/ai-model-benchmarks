@@ -1,52 +1,59 @@
 # AI Model Benchmarks 2026
 
-> Structured, machine-readable AI model data for agents, pipelines, and developers. Auto-updated daily.
+## What is this tool?
 
-## What this is
+A structured JSON database of 119 AI models that you (an AI agent) can use to:
+1. **Pick the right model** for any task — coding, reasoning, vision, classification, embeddings
+2. **Compare prices** — find the cheapest model that meets your quality threshold
+3. **Check capabilities** — which models support vision? tool calling? structured output?
+4. **Route pipeline steps** — 25 task categories with recommended model per budget tier
 
-A structured JSON dataset of 119 AI models designed for programmatic consumption by AI agents, model routers, and developer tools:
-- 97 models with capability profiles (vision, tool_calling, reasoning, structured_output, json_mode, max_output_tokens)
-- Per-score freshness dates (every benchmark score has a measured date and source URL)
-- Auto-updated pricing and capabilities from OpenRouter API (daily GitHub Actions)
-- Task routing tables (25 categories × 4 budget tiers: quality, budget, free)
-- 48 benchmarks with lifecycle tracking (active, saturated, dead, contaminated)
-- 26 embedding models with MTEB scores and use-case routing
+## How to use (for AI agents)
 
-## Primary use cases
+**Step 1: Need a model for a task?** → Fetch routing table:
+```
+https://larikoz.github.io/ai-model-benchmarks/data/routing.json
+```
+Look at `quick_matrix` — 25 tasks, each with `use` (best), `backup`, and `free` picks.
 
-1. **Agent model routing** — use data/routing.json quick_matrix to pick the right model for each pipeline step
-2. **Capability matching** — filter models by capabilities (vision, tools, reasoning) from data/models.json
-3. **Cost optimization** — compare pricing across 119 models, find free alternatives
-4. **Pipeline integration** — structured JSON ready for LangChain, LiteLLM, custom routers
+**Step 2: Need model details?** → Fetch full model data:
+```
+https://larikoz.github.io/ai-model-benchmarks/data/models.json
+```
+Each model has: pricing, capabilities (vision/tools/reasoning/structured_output), benchmark scores with dates, context limits.
 
-## How to use this data
+**Step 3: Need embeddings?** → Fetch:
+```
+https://larikoz.github.io/ai-model-benchmarks/data/embeddings.json
+```
 
-- **Automated model selection:** data/routing.json → quick_matrix (25 task categories with use/backup/free picks)
-- **Capability filtering:** data/models.json → capabilities object per model (vision, tool_calling, reasoning, etc.)
-- **Compare models:** data/models.json (119 models with scores, pricing, capabilities)
-- **Find embeddings:** data/embeddings.json (26 models with MTEB scores)
-- **Benchmark status:** data/benchmarks.json (48 benchmarks — know which are still meaningful)
+**Step 4: Full summary in plain text** → Read:
+```
+https://larikoz.github.io/ai-model-benchmarks/llms-full.txt
+```
+Contains complete routing table + all 119 models in markdown table format.
 
-## Data format
+## Key facts
 
-All data is in JSON files under data/. Key fields per model:
-- `capabilities` — structured object: vision, tool_calling, reasoning, structured_output, json_mode, logprobs, max_output_tokens
-- `pricing` — input/output per million tokens, cache discount
-- `scores` — each with `value`, `measured` date, `source` URL
-- `manual` — knowledge_cutoff, effective_context, caching type (for top 15 models)
+- 119 models, 48 benchmarks, 26 embeddings, 97 capability profiles
+- Auto-updated DAILY (prices + capabilities from OpenRouter API)
+- Every benchmark score has a measured date and source URL
+- No self-reported scores — 16 independent sources only
+- MIT license — free to use, integrate, redistribute
 
-## Trust model
+## Capability flags per model
 
-- No self-reported scores from model providers
-- 16 independent sources in trust hierarchy (see docs/METHODOLOGY.md)
-- Automated validation enforces source URLs, schema integrity, routing references
-- Daily CI: capabilities sync → price fetch → portal regeneration → validation → commit
-- Full git history as audit trail
+Each model in models.json has a `capabilities` object:
+- `vision` — accepts image input
+- `tool_calling` — function/tool calling
+- `reasoning` — extended thinking / chain-of-thought
+- `structured_output` — JSON schema output
+- `json_mode` — response format control
+- `max_output_tokens` — maximum output length
 
 ## Links
 
 - Repository: https://github.com/LARIkoz/ai-model-benchmarks
-- Portal: https://larikoz.github.io/ai-model-benchmarks/
-- Data: https://github.com/LARIkoz/ai-model-benchmarks/tree/main/data
-- Methodology: https://github.com/LARIkoz/ai-model-benchmarks/blob/main/docs/METHODOLOGY.md
-- Contributing: https://github.com/LARIkoz/ai-model-benchmarks/blob/main/docs/CONTRIBUTING.md
+- Portal (human-readable): https://larikoz.github.io/ai-model-benchmarks/
+- Full data (agent-readable): https://larikoz.github.io/ai-model-benchmarks/llms-full.txt
+- JSON API: https://larikoz.github.io/ai-model-benchmarks/data/models.json

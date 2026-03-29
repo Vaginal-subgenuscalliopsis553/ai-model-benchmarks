@@ -1,0 +1,165 @@
+# AI Model Benchmarks 2026 — Full Data for AI Agents
+# Updated: 2026-03-29
+
+This file contains the complete routing table and model summary.
+For full JSON data, fetch these URLs directly:
+- Models: https://larikoz.github.io/ai-model-benchmarks/data/models.json
+- Routing: https://larikoz.github.io/ai-model-benchmarks/data/routing.json
+- Embeddings: https://larikoz.github.io/ai-model-benchmarks/data/embeddings.json
+
+## Quick Decision Matrix (25 tasks)
+
+| Task | Best Model | Backup | Free |
+|------|-----------|--------|------|
+| Write/review code | Claude Sonnet 4.6 | MiniMax M2.5 | MiniMax M2.5 FREE |
+| Code review (post-implement) | Codex CLI | Qwen CLI | None |
+| Spec/architecture review | GPT-5.4 | Grok 4.20 | None |
+| Complex reasoning/architecture | Claude Opus 4.6 | Gemini 3.1 Pro | Gemini CLI |
+| Consilium (second opinion) | Grok 4.1 Fast | DeepSeek V3.2 | None |
+| Consilium (critical) | Grok 4.20 | Opus + Gemini | None |
+| Consilium (concept/spec) | GPT-5.4 + Grok 4.20 | + DeepSeek R1 | None |
+| Tool calling pipeline | Claude Opus 4.6 | GLM-5-Turbo | GLM-4.7-Flash |
+| Batch classification | Qwen CLI | MiniMax M2.5 | Both free |
+| Niche/gap analysis | Claude Opus 4.6 | + consilium stack | None |
+| Long document (>200K) | Gemini 3.1 Pro | MiniMax 01 | Gemini CLI |
+| Vision/screenshots | Gemini 3.1 Pro | GLM-4.6V | None |
+| Video analysis | Gemini 3.1 Pro | GLM-4.6V | None |
+| Writing/copywriting | Claude Opus 4.6 | GPT-5.4 | None |
+| Factual accuracy | Grok 4.20 | Claude Opus 4.6 | None |
+| Math/competition | GPT-5.4 | Gemini 3.1 Pro | None |
+| Cheap but quality coding | MiniMax M2.5 | GLM-5 | MiniMax M2.5 FREE |
+| Maximum quality at $0 | MiniMax M2.5 FREE | GLM-4.5 Air FREE | Qwen CLI |
+| Speed critical | MiniMax Lightning | Mistral Small | None |
+| EU compliance | Mistral Large | Mistral Medium | None |
+| Research structured data | Exa API | Tavily | Exa (1K/mo) |
+| Research web/PDF/fresh | Gemini CLI | Perplexity Sonar | Gemini CLI |
+| Scraper code gen | Claude Sonnet 4.6 | Gemini 3 Flash | MiniMax M2.5 FREE |
+| Medical QA/USMLE | GPT-5.4 or Gemini 3.1 Pro | DeepSeek R1 | MiniMax M2.5 FREE |
+| Function calling #1 | GLM-4.5 | Claude Opus 4.1 | GLM-4.7-Flash |
+
+## All 119 Models — Summary
+
+| Model | Provider | Tier | Context | Max Out | $/M in | $/M out | Caps | Best For |
+|-------|----------|------|---------|---------|--------|---------|------|----------|
+| Claude Opus 4.6 | Anthropic | T1 | 1M | 128K | 5.0 | 25.0 | VTRS | Reasoning, tool calling, writing, medical conte... |
+| Claude Opus 4.5 | Anthropic | T1 | 200K | 64K | 5.0 | 25.0 | VTRS | Reasoning, long-horizon tasks |
+| Claude Opus 4.1 | Anthropic | T1 | 200K | 32K | 15.0 | 75.0 | VTRS | Function calling |
+| Gemini 3.1 Pro | Google | T1 | 1M | 65K | 2.0 | 12.0 | VTRS | GPQA, ARC-AGI-2, medical research, vision, long... |
+| Gemini 3 Pro | Google | T1 | 65K | 32K | 2.0 | 12.0 | VRS | Scraper code generation, vision |
+| GPT-5.4 | OpenAI | T1 | 1M | 128K | 2.5 | 15.0 | VTRS | Math, agentic coding, JS deobfuscation, scienti... |
+| GPT-5.2 | OpenAI | T1 | 400K | 128K | 1.75 | 14.0 | VTRS | GPQA, general knowledge |
+| GPT-5.3 Codex | OpenAI | T1 | 400K | 128K | 1.75 | 14.0 | VTRS | Code generation |
+| Claude Sonnet 4.6 | Anthropic | T1 | 1M | 128K | 3.0 | 15.0 | VTRS | Main coding, scraper code gen, browser automati... |
+| Claude Sonnet 4.5 | Anthropic | T1 | 1M | 64K | 3.0 | 15.0 | VTRS | General assistant, GAIA |
+| Claude Haiku 4.5 | Anthropic | T1 | 200K | 64K | 1.0 | 5.0 | VTRS | Budget Claude, fast tasks |
+| Grok 4 | xAI | T1 | 256K | — | 3.0 | 15.0 | VTRS | Assembly deobfuscation, coding |
+| Grok 4.20 Beta | xAI | T1 | 2M | — | 2.0 | 6.0 | VTRS | Hallucination resistance, fact-checking, long c... |
+| GLM-5 | Z.ai | T1 | 80K | 131K | 1.0 | 3.2 | TRS | Tool calling, multilingual, long-horizon tasks,... |
+| GLM-5-Turbo | Z.ai | T1 | 202K | 131K | 1.2 | 4.0 | TR | Tool reliability, low error rate |
+| Gemini 2.5 Pro | Google | T1 | 1M | 65K | 1.25 | 10.0 | VTRS | Adaptive reasoning, GRIND |
+| Amazon Nova Premier | Amazon | T1 | 1M | 32K | 2.5 | 12.5 | VT | AWS ecosystem |
+| Cohere Command-A | Cohere | T1 | 256K | 8K | 2.5 | 10.0 | S | Enterprise |
+| MiniMax M2.5 | MiniMax | T2 | 196K | 65K | 0.2 | 1.17 | TRS | Best SWE/$, batch coding, browser automation, w... |
+| MiniMax M2.7 | MiniMax | T2 | 204K | 131K | 0.3 | 1.2 | TR | Agentic tasks, GDPval |
+| Kimi K2.5 | Moonshot | T2 | 262K | — | 0.45 | 2.2 | — | Vision + reasoning, budget GPQA, writing |
+| Kimi K2 | Moonshot | T2 | 131K | — | 0.4 | 2.0 | — | Budget Kimi |
+| GLM-4.7 | Z.ai | T2 | 202K | 65K | 0.39 | 1.75 | TRS | Tool calling budget |
+| GLM-4.6 | Z.ai | T2 | 204K | 204K | 0.39 | 1.9 | TRS | General tasks |
+| GLM-4.5 | Z.ai | T2 | 131K | 98K | 0.6 | 2.2 | TRS | Function calling #1 |
+| Qwen3.5-397B | Alibaba | T2 | 262K | 65K | 0.39 | 2.34 | VTRS | Vision+video+reasoning, instruction following #... |
+| Qwen3.5-122B | Alibaba | T2 | 262K | 65K | 0.26 | 2.08 | VTRS | Budget reasoning |
+| Qwen3.5-35B | Alibaba | T2 | 262K | 65K | 0.16 | 1.3 | VTRS | Mid-tier reasoning |
+| Qwen3-Coder | Alibaba | T2 | 262K | — | 0.22 | 1.0 | TS | Coding |
+| Qwen3-Coder-Plus | Alibaba | T2 | 1M | 65K | 0.65 | 3.25 | TS | Long context code |
+| DeepSeek V3.2 | DeepSeek | T2 | 163K | — | 0.26 | 0.38 | TRS | Cheapest quality, hallucination resistance budget |
+| DeepSeek R1 | DeepSeek | T2 | 64K | 16K | 0.45 | 2.15 | TR | Deep reasoning, medical budget king |
+| DeepSeek V3.2 Speciale | DeepSeek | T2 | 163K | 163K | 0.4 | 1.2 | RS | Enhanced V3.2 |
+| Grok 4.1 Fast | xAI | T2 | 2M | 30K | 0.2 | 0.5 | VTRS | Consilium, 2M context, long context budget |
+| Grok 4 Fast | xAI | T2 | 2M | 30K | 0.2 | 0.5 | VTRS | Classification, 2M context |
+| Grok Code Fast 1 | xAI | T2 | 256K | 10K | 0.2 | 1.5 | TRS | Code review budget |
+| Gemini 3 Flash | Google | T2 | 1M | 65K | 0.5 | 3.0 | VTRS | Fast + cheap Gemini, simple scrapers |
+| Gemini 2.5 Flash | Google | T2 | 1M | 65K | 0.3 | 2.5 | VTRS | Budget Gemini, ultra-cheap cached |
+| Amazon Nova Pro | Amazon | T2 | 300K | 5K | 0.8 | 3.2 | VT | Vision, AWS ecosystem |
+| Amazon Nova 2 Lite | Amazon | T2 | 1M | 65K | 0.3 | 2.5 | VTR | Multimodal 1M context |
+| Inception Mercury 2 | Inception | T2 | 128K | 50K | 0.25 | 0.75 | TRS | Speed king 872 tok/s |
+| Inception Mercury Coder | Inception | T2 | 128K | 32K | 0.25 | 0.75 | TS | Fast code |
+| MiniMax M1 | MiniMax | T2 | 1M | 40K | 0.4 | 2.2 | TR | Long context 1M |
+| MiniMax 01 | MiniMax | T2 | 1M | 1000K | 0.2 | 1.1 | V | Vision + 1M context |
+| Mistral Large 2512 | Mistral | T2 | 262K | — | 0.5 | 1.5 | VTS | EU compliance, vision |
+| Mistral Medium 3.1 | Mistral | T2 | 131K | — | 0.4 | 2.0 | VTS | EU compliance |
+| Codestral | Mistral | T2 | 256K | — | 0.3 | 0.9 | TS | Code, JS deobfuscation budget |
+| Devstral Medium | Mistral | T2 | 131K | — | 0.4 | 2.0 | TS | Code agent |
+| Llama 4 Maverick | Meta | T2 | 1M | 16K | None | None | VTS | Vision, MMLU-Pro |
+| GLM-4.6V | Z.ai | T2 | 131K | 131K | 0.3 | 0.9 | VTRS | Vision + VIDEO input |
+| GLM-4.5V | Z.ai | T2 | 65K | 16K | 0.6 | 1.8 | VTRS | Vision |
+| Qwen3.5-27B | Alibaba | T3 | 262K | 65K | 0.2 | 1.56 | VTRS | Vision+video |
+| GLM-4.5 Air | Z.ai | T3 | 131K | 98K | 0.13 | 0.85 | TRS | Budget GLM, batch general, classification |
+| Qwen Plus | Alibaba | T3 | 1M | 32K | 0.26 | 0.78 | T | 1M context budget |
+| Llama 4 Scout | Meta | T3 | 327K | 16K | 0.08 | 0.3 | VTS | 10M context!, Vision, Speed king |
+| GLM-4.7-FlashX | Z.ai | T3 | 202K | — | 0.06 | 0.4 | TRS | Ultra-cheap tool calling, Tau2 98.8% |
+| GLM-4-32B | Z.ai | T3 | 128K | — | 0.1 | 0.1 | T | Open-weight 32B |
+| Qwen3.5-Flash | Alibaba | T3 | 1M | 65K | 0.07 | 0.26 | VTRS | 1M context ultra-budget |
+| Qwen3.5-9B | Alibaba | T3 | 256K | 65K | 0.05 | 0.15 | VTRS | Tiny + vision+video |
+| Qwen3-30B | Alibaba | T3 | 40K | 40K | 0.08 | 0.28 | TRS | MoE small |
+| Qwen3-Coder-30B | Alibaba | T3 | 160K | 32K | 0.07 | 0.27 | TS | Code small |
+| Qwen Turbo | Alibaba | T3 | 131K | 8K | 0.03 | 0.13 | T | Cheapest Qwen |
+| Gemini 2.5 Flash Lite | Google | T3 | 1M | 65K | 0.1 | 0.4 | VTRS | Cheapest Gemini 1M |
+| Gemini 2.0 Flash | Google | T3 | 1M | 8K | 0.1 | 0.4 | VTS | Multimodal budget |
+| DeepSeek V3.1 | DeepSeek | T3 | 32K | 7K | 0.15 | 0.75 | TRS | Budget DeepSeek |
+| Amazon Nova Micro | Amazon | T3 | 128K | 5K | 0.04 | 0.14 | T | Cheapest AWS |
+| Amazon Nova Lite | Amazon | T3 | 300K | 5K | 0.06 | 0.24 | VT | Vision budget, 300K context |
+| Mistral Small 3.2 | Mistral | T3 | 128K | — | 0.07 | 0.2 | VTS | Vision tiny |
+| Mistral Small 3.1 | Mistral | T3 | 131K | 131K | 0.03 | 0.11 | VS | Vision cheapest, EU multilingual |
+| Mistral Nemo | Mistral | T3 | 131K | 16K | 0.02 | 0.04 | TS | Cheapest text |
+| Devstral Small | Mistral | T3 | 131K | — | 0.1 | 0.3 | TS | Code budget EU |
+| Google Gemma 3 27B | Google | T3 | 131K | 16K | 0.08 | 0.16 | VS | Open-weight vision |
+| MiniMax M2.5 (Free) | MiniMax | FREE | 196K | 196K | 0 | 0 | TR | Best free coder, batch coding, code review free |
+| Qwen3 Coder 480B (Free) | Alibaba | FREE | 262K | 262K | 0 | 0 | T | Coding free #1, 480B MoE 35B active |
+| Hermes 3 405B (Free) | Nous Research | FREE | 131K | — | 0 | 0 | — | Reasoning free, uncensored, general 405B |
+| NVIDIA Nemotron 3 Super 120B (Free) | NVIDIA | FREE | 262K | 262K | 0 | 0 | TRS | Long-context reasoning free, 120B MoE |
+| GLM-4.5 Air (Free) | Z.ai | FREE | 131K | 96K | 0 | 0 | TR | Batch general free, classification, Chinese+Eng... |
+| Gemma 3 27B (Free) | Google | FREE | 131K | 8K | 0 | 0 | V | General free, Google quality |
+| Llama 3.3 70B (Free) | Meta | FREE | 65K | — | 0 | 0 | T | General purpose proven free |
+| Mistral Small 3.1 24B (Free) | Mistral | FREE | 131K | 131K | 0 | 0 | VS | EU compliance free, multilingual |
+| StepFun Step 3.5 Flash (Free) | StepFun | FREE | 256K | 256K | 0 | 0 | TR | 256K context free |
+| Qwen3 Next 80B (Free) | Alibaba | FREE | 262K | — | 0 | 0 | TS | Ultra-long ctx free, MoE 3B active |
+| OpenAI GPT-OSS 120B (Free) | OpenAI | FREE | 131K | 131K | 0 | 0 | TR | OpenAI open-source experiment |
+| OpenAI GPT-OSS 20B (Free) | OpenAI | FREE | 131K | 131K | 0 | 0 | TR | Lightweight OpenAI OSS |
+| Arcee Trinity Large (Free) | Arcee AI | FREE | 131K | — | 0 | 0 | TS | Enterprise merge model preview |
+| NVIDIA Nemotron Nano 12B VL (Free) | NVIDIA | FREE | 128K | 128K | 0 | 0 | VTR | FREE vision model #1 |
+| NVIDIA Nemotron Nano 9B (Free) | NVIDIA | FREE | 128K | — | 0 | 0 | TRS | Lightweight NVIDIA free |
+| NVIDIA Nemotron 3 Nano 30B (Free) | NVIDIA | FREE | 256K | — | 0 | 0 | TR | Long ctx 256K free MoE |
+| Gemma 3 12B (Free) | Google | FREE | 32K | 8K | 0 | 0 | V | Small general free |
+| Gemma 3 4B (Free) | Google | FREE | 32K | 8K | 0 | 0 | V | Edge, mobile free |
+| Gemma 3n 4B (Free) | Google | FREE | 8K | 2K | 0 | 0 | — | Ultra-small edge IoT |
+| Gemma 3n 2B (Free) | Google | FREE | 8K | 2K | 0 | 0 | — | Prototype IoT minimal |
+| Qwen3 4B (Free) | Alibaba | FREE | 262K | 262K | 0 | 0 | T | Lightweight tasks free |
+| Llama 3.2 3B (Free) | Meta | FREE | 131K | — | 0 | 0 | — | Small with long ctx free |
+| Arcee Trinity Mini (Free) | Arcee AI | FREE | 131K | — | 0 | 0 | TRS | Lightweight merge free |
+| Liquid LFM 1.2B Thinking (Free) | Liquid AI | FREE | 32K | — | 0 | 0 | R | Thinking CoT at 1.2B free |
+| Liquid LFM 1.2B Instruct (Free) | Liquid AI | FREE | 32K | — | 0 | 0 | — | Ultra-small instruct free |
+| Venice Uncensored (Free) | Cognitive Computations | FREE | 32K | — | 0 | 0 | S | No content filter free |
+| Free Models Router | OpenRouter | FREE | 200K | — | 0 | 0 | VTRS | Auto-routes to best free model |
+| GLM-4.7-Flash (CLI) | Z.ai | FREE | 200K | — | 0 | 0 | — | Tool calling free CLI |
+| GLM-4.5-Flash (CLI) | Z.ai | FREE | 200K | — | 0 | 0 | — | Simple tasks free CLI |
+| Qwen CLI (Qwen3-Coder) | Alibaba | FREE | 1M | — | 0 | 0 | — | Classification batch 2000 RPD free |
+| Codex CLI (GPT Codex) | OpenAI | FREE | None | — | 0 | 0 | — | Code review free, architecture review |
+| Gemini CLI (gemini-2.5-pro) | Google | FREE | 2M | — | 0 | 0 | — | Research free, PDF analysis, visual QA, 2M context |
+| Llama 3.3 70B Q4 | Meta | FREE | 131K | — | 0 | 0 | — | Local coding, general purpose, privacy |
+| Qwen3.5-72B Q4 | Alibaba | FREE | 131K | — | 0 | 0 | — | Local coding, multilingual, instruction following |
+| Gemma 3 27B Q4 | Google | FREE | 131K | — | 0 | 0 | — | Local general purpose, vision, efficiency |
+| Mistral Small 3.1 24B Q4 | Mistral | FREE | 128K | — | 0 | 0 | — | Local coding, multilingual, function calling |
+| Phi-4 14B Q4 | Microsoft | FREE | 16K | — | 0 | 0 | — | Local STEM reasoning, math, efficient edge |
+| Llama 3.2 8B Q4 | Meta | FREE | 131K | — | 0 | 0 | — | Local lightweight, fast responses, low RAM |
+| Gemma 3 4B Q4 | Google | FREE | 32K | — | 0 | 0 | — | Local ultra-light, 4GB RAM devices, edge |
+| Phi-3.5 Mini 3.8B Q4 | Microsoft | FREE | 128K | — | 0 | 0 | — | Local CPU inference, 3GB RAM, edge devices |
+| Whisper large-v3 | OpenAI | FREE | None | — | 0.006 | 0 | — | Speech-to-text, multilingual, self-hosted ASR |
+| Whisper large-v3-turbo | OpenAI | FREE | None | — | 0.006 | 0 | — | Fast speech-to-text, throughput-critical ASR |
+| Deepgram Nova-3 | Deepgram | FREE | None | — | 0.0043 | 0 | — | Real-time transcription, diarization, low WER |
+| AssemblyAI Universal-2 | AssemblyAI | FREE | None | — | 0.0065 | 0 | — | Speaker diarization, accurate transcription |
+| Groq Whisper | Groq | FREE | None | — | 0.006 | 0 | — | Ultra-fast transcription, speed-critical pipelines |
+| Soniox | Soniox | FREE | None | — | 0.1 | 0 | — | Best diarization, lowest WER, custom vocabulary |
+| Google Chirp 2 | Google | FREE | None | — | None | 0 | — | Real-time transcription, 125+ languages, multil... |
+
+## Capability Legend
+V=Vision, T=Tool Calling, R=Reasoning, S=Structured Output
