@@ -275,7 +275,8 @@ def main():
     updated_pricing, cache_changed = update_cache_pricing(
         pricing_data, our_models, or_price_map
     )
-    # Штампуем дату только если были реальные изменения
+    # Always stamp checked_at (successful fetch), updated only on actual changes
+    updated_pricing["checked_at"] = today
     if price_changes or cache_changed:
         updated_pricing = update_pricing_json(updated_pricing, today)
     save_json(PRICING_FILE, updated_pricing)

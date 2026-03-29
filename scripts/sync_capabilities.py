@@ -13,7 +13,7 @@ Usage:
 import json
 import sys
 import argparse
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 try:
@@ -50,7 +50,7 @@ def fetch_openrouter_models() -> list[dict]:
         sys.exit(1)
 
 
-def load_json(path: Path) -> list:
+def load_json(path: Path) -> list | dict:
     with open(path) as f:
         return json.load(f)
 
@@ -225,20 +225,12 @@ def main():
                 continue
             # Check staleness (>90 days)
             manual_updated = manual_data.get("updated", "")
-            if (
-                manual_updated
-                and manual_updated
-                < (
-                    date.today().replace(day=1)
-                    - __import__("datetime").timedelta(days=90)
-                ).isoformat()
-            ):
+            stale_threshold = (date.today() - timedelta(days=90)).isoformat()
+            if manual_updated and manual_updated < stale_threshold:
                 stale += 1
                 print(f"  STALE: {model['id']} manual data from {manual_updated}")
-            # Merge into model (manual fields don't overwrite auto fields)
-            if "manual" not in model:
-                model["manual"] = {}
-            model["manual"] = {k: v for k, v in manual_data.items()}
+            # Merge manual data into model
+            model["manual"] = dict(manual_data)
             merged += 1
         print(f"\nManual data merged: {merged} models ({stale} stale)")
 

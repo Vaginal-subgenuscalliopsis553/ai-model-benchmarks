@@ -41,9 +41,8 @@ def fmt_score(v) -> str:
 def fmt_str(s) -> str:
     if s is None:
         return "null"
-    # Экранируем двойные кавычки внутри строк
-    escaped = s.replace("\\", "\\\\").replace('"', '\\"')
-    return f'"{escaped}"'
+    # Use json.dumps for safe JS string escaping (handles newlines, quotes, </script>, unicode)
+    return json.dumps(s, ensure_ascii=False)
 
 
 def fmt_num(v) -> str:
@@ -489,22 +488,16 @@ def replace_string_const(html: str, var_name: str, value: str) -> str:
     return pattern.sub(rf'\g<1>"{value}"', html)
 
 
-def replace_hero_stat(html: str, old_val: str, label: str, new_val: str) -> str:
-    """Заменяет hero-stat-num для конкретного label."""
+def replace_hero_stat(html: str, label: str, new_val: str) -> str:
+    """Заменяет hero-stat-num для конкретного label (any current value)."""
     pattern = re.compile(
-        rf'(<span class="hero-stat-num">)\s*{re.escape(old_val)}\s*(</span>\s*<span class="hero-stat-label">\s*{re.escape(label)}\s*</span>)',
+        rf'(<span class="hero-stat-num">)\s*\d+\s*(</span>\s*<span class="hero-stat-label">\s*{re.escape(label)}\s*</span>)',
         re.DOTALL,
     )
-    new = pattern.sub(rf"\g<1>{new_val}\g<2>", html)
-    if new == html:
-        # Try simpler replacement
-        old_str = f">{old_val}</span>"
-        if old_str in html:
-            new = html.replace(old_str, f">{new_val}</span>", 1)
-        else:
-            print(f"  WARN: Hero stat not found: {old_val!r} / {label!r} — skipping")
-            return html
-    return new
+    if not pattern.search(html):
+        print(f"  WARN: Hero stat not found for label {label!r} — skipping")
+        return html
+    return pattern.sub(rf"\g<1>{new_val}\g<2>", html)
 
 
 def replace_hero_subtitle(html: str, model_count: int, bench_count: int) -> str:
@@ -603,8 +596,8 @@ def main():
     bench_count = len(benchmarks)
 
     html = replace_hero_subtitle(html, model_count, bench_count)
-    html = replace_hero_stat(html, "119", "models", str(model_count))
-    html = replace_hero_stat(html, "48", "benchmarks", str(bench_count))
+    html = replace_hero_stat(html, "models", str(model_count))
+    html = replace_hero_stat(html, "benchmarks", str(bench_count))
     html = replace_verified_badge(html, today)
     html = replace_section_verified(html, today)
 

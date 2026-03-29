@@ -130,6 +130,12 @@ def validate_models(models: list[dict], strict: bool):
         # Score freshness
         scores = model.get("scores", {})
         for bench_id, score in scores.items():
+            if not isinstance(score, dict):
+                error(
+                    f"models.json: {mid}.{bench_id} score must be an object, got {type(score).__name__}"
+                )
+                continue
+
             if bench_id not in KNOWN_BENCHMARK_IDS and KNOWN_BENCHMARK_IDS:
                 warn(f"models.json: {mid} uses unknown benchmark id '{bench_id}'")
 
