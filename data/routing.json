@@ -687,7 +687,7 @@
       },
       "video_input": {
         "cat": "multimodal",
-        "bench": "video",
+        "bench": "video_mme",
         "quality_1": {
           "name": "Gemini 3.1 Pro",
           "id": "gemini-3-1-pro",

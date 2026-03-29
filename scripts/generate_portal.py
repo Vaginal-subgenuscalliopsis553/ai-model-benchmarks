@@ -76,7 +76,7 @@ def tier_str(tier: int) -> str:
 
 
 def pick_label(entry: dict | None) -> str:
-    """Формирует строку вида 'Name (score%, $price)' из king_picks entry."""
+    """Формирует строку вида 'Name (score, $price)' из king_picks entry."""
     if not entry:
         return '"—"'
     name = entry.get("name", "")
@@ -84,7 +84,11 @@ def pick_label(entry: dict | None) -> str:
     price = entry.get("price")
     parts = []
     if score is not None:
-        parts.append(f"{score}%")
+        # Only add % for scores that are percentages (0-100 range)
+        if isinstance(score, (int, float)) and 0 < score <= 100:
+            parts.append(f"{score}%")
+        else:
+            parts.append(str(score))
     if price is not None and price > 0:
         parts.append(f"${price}")
     label = name + (f" ({', '.join(parts)})" if parts else "")

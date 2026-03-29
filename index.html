@@ -46,7 +46,7 @@
         "@context": "https://schema.org",
         "@type": "Dataset",
         "name": "AI Model Benchmarks 2026",
-        "description": "Community-driven comparison of 119 AI models across 48 benchmarks with per-score freshness dates, auto-updated pricing, and task routing recommendations.",
+        "description": "Community-driven comparison of 119 AI models across 54 benchmarks with per-score freshness dates, auto-updated pricing, and task routing recommendations.",
         "url": "https://larikoz.github.io/ai-model-benchmarks/",
         "license": "https://opensource.org/licenses/MIT",
         "creator": { "@type": "Person", "name": "LARIkoz" },
@@ -1044,12 +1044,12 @@
           <span class="hero-stat-label">benchmarks</span>
         </div>
         <div class="hero-stat">
-          <span class="hero-stat-num">5</span>
+          <span class="hero-stat-num"<span>4</span>
           <span class="hero-stat-label">pricing tiers</span>
         </div>
       </div>
       <div class="verified-badge">
-        ✓ Verified 2026-03-29 (v3) · Next update: 2026-04-05
+        ✓ Verified 2026-03-30 (v3) · Next update: 2026-04-06
       </div>
     </section>
 
@@ -1134,7 +1134,7 @@
         <div class="section-tag">K. Embeddings</div>
         <h2 class="section-title">Embedding Models Comparison</h2>
         <p class="section-sub">
-          25 models. MTEB scores, pricing, OpenRouter IDs. For RAG use Retrieval
+          26 models. MTEB scores, pricing, OpenRouter IDs. For RAG use Retrieval
           NDCG@10, not average MTEB.
         </p>
 
@@ -1387,7 +1387,7 @@
     <section id="matrix" class="fade-in">
       <div class="section-tag">Quick Decision Matrix</div>
       <h2 class="section-title">I need a model for X → use Y</h2>
-      <p class="section-sub">Fastest lookup. Verified 2026-03-29.</p>
+      <p class="section-sub">Fastest lookup. Verified 2026-03-30.</p>
       <input
         type="text"
         class="search-box search-matrix"
@@ -1470,7 +1470,7 @@
       // DATA — update here (quarterly)
       // ============================================================
 
-      const VERIFIED = "2026-03-29";
+      const VERIFIED = "2026-03-30";
       const NEXT_UPDATE = "2026-03-31";
 
       // MEGA-TABLE rows
@@ -1641,7 +1641,7 @@
             {cat: "Multi-turn tools", benchKey: "tau2", bench: "TAU2", q1: "Claude Opus 4.6 (99.3%)", q2: "GLM-5 (98.2%)", b1: "GLM-4.7 (95.9%, $0.39)", b2: "GLM-4.7-FlashX ($0.06)", free: "GLM-4.7-Flash"},
             {cat: "Tool Reliability Error Rate", benchKey: "tool_error_rate", bench: "TOOL_ERROR_RATE", q1: "GLM-5-Turbo (0.67%)", q2: "Claude Opus 4.6", b1: "GLM-5-Turbo ($1.2)", b2: "GLM-4.7 ($0.39)", free: "—"},
             {cat: "General Assistant Gaia", benchKey: "gaia", bench: "GAIA", q1: "Claude Sonnet 4.5 (74.6%)", q2: "Claude Opus 4.6", b1: "—", b2: "—", free: "—"},
-            {cat: "Real World Work Gdpval", benchKey: "gdpval", bench: "GDPVAL", q1: "Claude Opus 4.6 (1500%)", q2: "MiniMax M2.7 (1495%)", b1: "MiniMax M2.7 ($0.3)", b2: "GLM-5 ($1.0)", free: "—"},
+            {cat: "Real World Work Gdpval", benchKey: "gdpval", bench: "GDPVAL", q1: "Claude Opus 4.6 (1500)", q2: "MiniMax M2.7 (1495)", b1: "MiniMax M2.7 ($0.3)", b2: "GLM-5 ($1.0)", free: "—"},
             {cat: "Long Horizon Vending B2", benchKey: "vending_b2", bench: "VENDING_B2", q1: "Claude Opus 4.5", q2: "GLM-5", b1: "GLM-5 ($1.0)", b2: "MiniMax M2.7 ($0.3)", free: "—"},
           ],
         },
@@ -1652,7 +1652,7 @@
             {cat: "Instruction following", benchKey: "ifbench", bench: "IFBench", q1: "Qwen3.5-397B (78.8%)", q2: "Gemini 3 Flash (78.0%)", b1: "Qwen3.5-397B ($0.39)", b2: "GLM-5 (88.0%, $1.0)", free: "—"},
             {cat: "Hallucination resistance", benchKey: "simpleqa", bench: "SimpleQA", q1: "Grok 4.20", q2: "Claude Opus 4.6", b1: "GLM-5 (48.0%, $1.0)", b2: "DeepSeek V3.2 ($0.26)", free: "—"},
             {cat: "Writing Quality Human Pref", benchKey: "human_pref", bench: "HUMAN_PREF", q1: "Claude Opus 4.6", q2: "GPT-5.4", b1: "Kimi K2.5 ($0.45)", b2: "MiniMax M2.5 ($0.2)", free: "MiniMax M2.5 FREE"},
-            {cat: "Chat Preference Lmarena", benchKey: "lmarena", bench: "LMARENA", q1: "Claude Opus 4.6 (1476%)", q2: "Claude Opus 4.5 (1345%)", b1: "Kimi K2.5 (988%, $0.45)", b2: "Claude Sonnet 4.6 (941%, $3.0)", free: "—"},
+            {cat: "Chat Preference Lmarena", benchKey: "lmarena", bench: "LMARENA", q1: "Claude Opus 4.6 (1476)", q2: "Claude Opus 4.5 (1345)", b1: "Kimi K2.5 (988, $0.45)", b2: "Claude Sonnet 4.6 (941, $3.0)", free: "—"},
             {cat: "Multilingual Mgsm", benchKey: "mgsm", bench: "MGSM", q1: "GLM-5 (90.0%)", q2: "Gemini 3.1 Pro", b1: "GLM-5 ($1.0)", b2: "Qwen3.5-397B ($0.39)", free: "—"},
           ],
         },
@@ -1661,7 +1661,7 @@
           title: "Multimodal",
           rows: [
             {cat: "Vision (MMMU)", benchKey: "mmmu", bench: "MMMU", q1: "Gemini 3.1 Pro", q2: "GPT-5.4", b1: "GLM-4.6V ($0.3)", b2: "Qwen3.5-397B ($0.39)", free: "—"},
-            {cat: "Video input", benchKey: "video", bench: "VIDEO", q1: "Gemini 3.1 Pro", q2: "GLM-4.6V ($0.3)", b1: "GLM-4.6V ($0.3)", b2: "Qwen3.5-397B ($0.39)", free: "—"},
+            {cat: "Video input", benchKey: "video_mme", bench: "Video-MME", q1: "Gemini 3.1 Pro", q2: "GLM-4.6V ($0.3)", b1: "GLM-4.6V ($0.3)", b2: "Qwen3.5-397B ($0.39)", free: "—"},
             {cat: "Web Understanding Browsecomp", benchKey: "browsecomp", bench: "BROWSECOMP", q1: "MiniMax M2.5 (76.3%)", q2: "GLM-5", b1: "MiniMax M2.5 ($0.2)", b2: "GLM-5 ($1.0)", free: "MiniMax M2.5 FREE"},
           ],
         },
@@ -1671,7 +1671,7 @@
           rows: [
             {cat: "Legal / finance", benchKey: "scale_seal", bench: "SCALE_SEAL", q1: "Claude Opus 4.6", q2: "GPT-5.4", b1: "Kimi K2.5 ($0.45)", b2: "Qwen3.5-397B ($0.39)", free: "—"},
             {cat: "Long context >200K", benchKey: "long_context", bench: "LONG_CONTEXT", q1: "Gemini 3.1 Pro", q2: "Grok 4.1 Fast", b1: "MiniMax 01 ($0.2)", b2: "Qwen Plus ($0.26)", free: "Gemini CLI"},
-            {cat: "Speed Throughput", benchKey: "throughput_tps", bench: "THROUGHPUT_TPS", q1: "Llama 4 Scout (2600%)", q2: "Inception Mercury 2 (872%)", b1: "Inception Mercury 2 ($0.3)", b2: "GLM-4.7-FlashX ($0.06)", free: "—"},
+            {cat: "Speed Throughput", benchKey: "throughput_tps", bench: "THROUGHPUT_TPS", q1: "Llama 4 Scout (2600)", q2: "Inception Mercury 2 (872)", b1: "Inception Mercury 2 ($0.3)", b2: "GLM-4.7-FlashX ($0.06)", free: "—"},
             {cat: "Eu Compliance", benchKey: "scale_seal", bench: "SCALE_SEAL", q1: "Mistral Large ($0.5)", q2: "Mistral Medium ($0.4)", b1: "Mistral Small ($0.07)", b2: "Devstral Small ($0.1)", free: "—"},
             {cat: "Self Host Open Weight", benchKey: "benchlm", bench: "BenchLM", q1: "GLM-5", q2: "DeepSeek V3.2", b1: "Qwen3.5-397B", b2: "GLM-4-32B ($0.1)", free: "Qwen CLI"},
           ],
@@ -2000,15 +2000,15 @@
         {name: "IFBench", cat: "INSTRUCTION", desc: "Instruction following. Tests compliance with complex format constraints.", saturation: false, url: "https://arxiv.org/abs/2502.09980", lifecycle: "active"},
         {name: "GRIND", cat: "REASONING", desc: "Adaptive reasoning with adjustable difficulty.", saturation: false, url: "https://arxiv.org/abs/2501.06751", lifecycle: "active"},
         {name: "GAIA", cat: "AGENTIC", desc: "General AI Assistant benchmark. Real-world multi-step tasks.", saturation: "slight", url: "https://huggingface.co/gaia-benchmark", lifecycle: "active"},
-        {name: "HumanEval", cat: "CODING", desc: "Python code generation. Saturated — most models score 95%+.", saturation: false, url: "https://github.com/openai/human-eval", lifecycle: "saturated"},
-        {name: "MMLU", cat: "GENERAL", desc: "Multi-task knowledge. Saturated and contaminated.", saturation: false, url: "https://arxiv.org/abs/2009.03300", lifecycle: "saturated"},
+        {name: "HumanEval", cat: "CODING", desc: "Python code generation. Saturated — most models score 95%+.", saturation: false, url: "https://github.com/openai/human-eval", lifecycle: "dead"},
+        {name: "MMLU", cat: "GENERAL", desc: "Multi-task knowledge. Saturated and contaminated.", saturation: false, url: "https://arxiv.org/abs/2009.03300", lifecycle: "dead"},
         {name: "MMLU-Pro", cat: "GENERAL", desc: "Professional-level multi-task knowledge. Harder than original MMLU.", saturation: false, url: "https://arxiv.org/abs/2406.01574", lifecycle: "active"},
-        {name: "GSM8K", cat: "MATH", desc: "Grade school math. Saturated — frontier models at 95%+.", saturation: false, url: "https://arxiv.org/abs/2110.14168", lifecycle: "saturated"},
+        {name: "GSM8K", cat: "MATH", desc: "Grade school math. Saturated — frontier models at 95%+.", saturation: false, url: "https://arxiv.org/abs/2110.14168", lifecycle: "dead"},
         {name: "AIME 2025", cat: "MATH", desc: "Math competition problems. American Invitational Mathematics Exam.", saturation: false, url: "https://artofproblemsolving.com/wiki/index.php/AIME", lifecycle: "active"},
-        {name: "HellaSwag", cat: "GENERAL", desc: "Common sense reasoning. Saturated at 95%+.", saturation: false, url: "https://arxiv.org/abs/1905.07830", lifecycle: "saturated"},
-        {name: "BBH (BIG-Bench Hard)", cat: "REASONING", desc: "BIG-Bench Hard. 23 challenging tasks. Largely saturated.", saturation: false, url: "https://arxiv.org/abs/2210.09261", lifecycle: "saturated"},
-        {name: "MATH (base)", cat: "MATH", desc: "Competition math (base). Superseded by AIME 2025.", saturation: false, url: "https://arxiv.org/abs/2103.03874", lifecycle: "saturated"},
-        {name: "DROP", cat: "REASONING", desc: "Discrete reasoning over paragraphs. Saturated.", saturation: false, url: "https://arxiv.org/abs/1903.00161", lifecycle: "saturated"},
+        {name: "HellaSwag", cat: "GENERAL", desc: "Common sense reasoning. Saturated at 95%+.", saturation: false, url: "https://arxiv.org/abs/1905.07830", lifecycle: "dead"},
+        {name: "BBH (BIG-Bench Hard)", cat: "REASONING", desc: "BIG-Bench Hard. 23 challenging tasks. Largely saturated.", saturation: false, url: "https://arxiv.org/abs/2210.09261", lifecycle: "dead"},
+        {name: "MATH (base)", cat: "MATH", desc: "Competition math (base). Superseded by AIME 2025.", saturation: false, url: "https://arxiv.org/abs/2103.03874", lifecycle: "dead"},
+        {name: "DROP", cat: "REASONING", desc: "Discrete reasoning over paragraphs. Saturated.", saturation: false, url: "https://arxiv.org/abs/1903.00161", lifecycle: "dead"},
         {name: "MGSM", cat: "MULTILINGUAL", desc: "Multilingual grade school math. Tests reasoning across languages.", saturation: false, url: "https://arxiv.org/abs/2210.03057", lifecycle: "saturated"},
         {name: "MedQA (USMLE)", cat: "MEDICAL", desc: "Medical board exam questions (USMLE). Tests clinical reasoning.", saturation: false, url: "https://arxiv.org/abs/2009.13081", lifecycle: "active"},
         {name: "Throughput (tokens/sec)", cat: "INFRASTRUCTURE", desc: "Tokens per second output speed benchmark.", saturation: false, url: "https://artificialanalysis.ai/models", lifecycle: "active"},
