@@ -84,8 +84,9 @@ def pick_label(entry: dict | None) -> str:
     price = entry.get("price")
     parts = []
     if score is not None:
-        # Only add % for scores that are percentages (0-100 range)
-        if isinstance(score, (int, float)) and 0 < score <= 100:
+        # Add % only for integer-like percentage scores (1-100)
+        # Scores < 1 are ratios (ROUGE 0.835), scores > 100 are ELO/TPS
+        if isinstance(score, (int, float)) and 1 <= score <= 100:
             parts.append(f"{score}%")
         else:
             parts.append(str(score))

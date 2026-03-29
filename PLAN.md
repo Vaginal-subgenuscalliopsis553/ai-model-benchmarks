@@ -37,7 +37,7 @@ Daily CI: sync_capabilities → fetch_prices → generate_portal → auto-commit
 ## Data files (v1.1 DONE)
 
 - [x] `data/models.json` — 119 models, per-score dates, capabilities, pricing
-- [x] `data/benchmarks.json` — 48 benchmarks with lifecycle status
+- [x] `data/benchmarks.json` — 54 benchmarks with lifecycle status
 - [x] `data/embeddings.json` — 26 embedding models
 - [x] `data/routing.json` — KING + FREE + embedding routing + quick matrix
 - [x] `data/pricing.json` — cache pricing
