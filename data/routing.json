@@ -406,7 +406,7 @@
           "price": null
         },
         "quality_2": {
-          "name": "Claude",
+          "name": "Claude Opus 4.6",
           "id": "claude-opus-4-6",
           "score": null,
           "price": null
