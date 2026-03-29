@@ -869,7 +869,8 @@
           "score": null,
           "price": 0.1
         },
-        "free": null
+        "free": null,
+        "bench_note": "Legal compliance proxy (Scale SEAL)"
       },
       "self_host_open_weight": {
         "cat": "domain_and_infrastructure",
@@ -903,7 +904,8 @@
           "id": "qwen-cli",
           "score": null,
           "price": 0
-        }
+        },
+        "bench_note": "General quality proxy"
       }
     },
     "web_scraping": {
@@ -973,7 +975,8 @@
           "id": "gemini-cli",
           "score": null,
           "price": 0
-        }
+        },
+        "bench_note": "Code gen proxy (Zyte)"
       },
       "browser_automation_browseruse": {
         "cat": "web_scraping",
@@ -1041,7 +1044,8 @@
           "id": "gemini-cli",
           "score": null,
           "price": 0
-        }
+        },
+        "bench_note": "Browser automation proxy"
       },
       "websocket_interception": {
         "cat": "web_scraping",
@@ -1075,7 +1079,8 @@
           "id": "qwen-cli",
           "score": null,
           "price": 0
-        }
+        },
+        "bench_note": "Code gen proxy (Zyte)"
       },
       "html_dom_extraction": {
         "cat": "web_scraping",
@@ -1109,7 +1114,8 @@
           "id": "minimax-m2-5-free",
           "score": null,
           "price": 0
-        }
+        },
+        "bench_note": "Code gen proxy (Zyte)"
       }
     },
     "reverse_engineering": {
@@ -1242,7 +1248,8 @@
           "id": "codex-cli",
           "score": null,
           "price": 0
-        }
+        },
+        "bench_note": "Binary RE proxy (BinMetric)"
       },
       "binary_arm_x86": {
         "cat": "reverse_engineering",
@@ -1305,7 +1312,8 @@
           "id": "minimax-m2-5-free",
           "score": null,
           "price": 0
-        }
+        },
+        "bench_note": "Code gen proxy (SWE-V)"
       }
     },
     "medical": {
@@ -1404,7 +1412,8 @@
           "score": null,
           "price": 0.45
         },
-        "free": null
+        "free": null,
+        "bench_note": "Patient content proxy"
       },
       "immunology_research": {
         "cat": "medical",
@@ -1438,7 +1447,8 @@
           "id": "gemini-cli",
           "score": null,
           "price": 0
-        }
+        },
+        "bench_note": "Biomedical QA proxy"
       },
       "medical_fact_check": {
         "cat": "medical",
@@ -1694,7 +1704,8 @@
           "score": null,
           "price": null
         },
-        "free": null
+        "free": null,
+        "bench_note": "General quality proxy (at quantization)"
       },
       "local_8gb": {
         "cat": "local_models",
@@ -1711,7 +1722,8 @@
           "score": null,
           "price": 0
         },
-        "free": null
+        "free": null,
+        "bench_note": "General quality proxy (at quantization)"
       },
       "local_4gb_cpu": {
         "cat": "local_models",
@@ -1728,7 +1740,8 @@
           "score": null,
           "price": 0
         },
-        "free": null
+        "free": null,
+        "bench_note": "Speed proxy (throughput at resource limit)"
       },
       "local_mac_optimized": {
         "cat": "local_models",
