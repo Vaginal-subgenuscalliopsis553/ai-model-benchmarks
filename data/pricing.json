@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-28",
+  "updated": "2026-03-30",
   "source": "openrouter.ai/api/v1/models",
   "cache_pricing_by_provider": [
     {
@@ -158,8 +158,8 @@
     },
     {
       "model": "MiniMax M2.5",
-      "input_per_m": 0.2,
-      "cached_per_m": 0.1,
+      "input_per_m": 0.19,
+      "cached_per_m": 0.095,
       "discount": "50%",
       "note": null
     },
@@ -186,14 +186,15 @@
     }
   ],
   "when_cache_is_effective": [
-    "Batch classification — one system prompt, 1000+ items → 90% savings on input",
-    "Consilium — one plan.md as prefix, different models read it → cached on all",
-    "Code review — one codebase as context, different questions → cached",
-    "Multi-turn agents — long context accumulates → automatic cache hit"
+    "Batch classification \u2014 one system prompt, 1000+ items \u2192 90% savings on input",
+    "Consilium \u2014 one plan.md as prefix, different models read it \u2192 cached on all",
+    "Code review \u2014 one codebase as context, different questions \u2192 cached",
+    "Multi-turn agents \u2014 long context accumulates \u2192 automatic cache hit"
   ],
   "when_cache_is_useless": [
     "Single requests without repetition",
     "Each request is completely unique (no common prefix)",
     "Models without cache support"
-  ]
+  ],
+  "checked_at": "2026-03-30"
 }
