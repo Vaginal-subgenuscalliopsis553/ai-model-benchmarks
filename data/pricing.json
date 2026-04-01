@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-30",
+  "updated": "2026-04-01",
   "source": "openrouter.ai/api/v1/models",
   "cache_pricing_by_provider": [
     {
@@ -158,8 +158,8 @@
     },
     {
       "model": "MiniMax M2.5",
-      "input_per_m": 0.19,
-      "cached_per_m": 0.095,
+      "input_per_m": 0.156,
+      "cached_per_m": 0.078,
       "discount": "50%",
       "note": null
     },
@@ -196,5 +196,5 @@
     "Each request is completely unique (no common prefix)",
     "Models without cache support"
   ],
-  "checked_at": "2026-03-31"
+  "checked_at": "2026-04-01"
 }
